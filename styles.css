@@ -1,0 +1,561 @@
+body.light-mode {
+    background-color: #f8f8f8;
+    color: #333;
+  }
+  
+  body.dark-mode {
+    background-color: #121212;
+    color: #f8f8f8;
+  }
+  
+  .navbar.dark-mode {
+    background-color: #1e1e1e;
+  }
+  
+  .navbar.light-mode {
+    background-color: #333;
+  }
+  
+  .footer-content.dark-mode {
+    background-color: #1e1e1e;
+    color: #ccc;
+  }
+  
+  .footer-content.light-mode {
+    background-color: #f8f8f8;
+    color: #666;
+  }
+  
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #8A2BE2, #00FFFF); /* Neon Purple to Neon Blue gradient */
+    color: #FFFFFF; /* White text for contrast */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black for navbar */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    color: #FFFFFF; /* White logo text */
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: #FFFFFF; /* White links */
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00FFFF;
+}
+
+/* Hero Section */
+.hero {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background: #8A2BE2; /* Neon Purple */
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #00FFFF; /* Neon Blue on hover */
+}
+
+/* Lessons Section */
+.lessons {
+    padding: 3rem 2rem;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black for lessons section */
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 2rem auto;
+    color: #FFFFFF;
+}
+
+.lessons h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Fix for lesson-card text visibility */
+.lesson-card {
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black for cards */
+    color: #FFFFFF; /* Ensure text is white for visibility */
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border: 2px solid transparent;
+    display: flex; /* Ensure proper layout */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Space out content */
+}
+
+/* Remove duplicate or conflicting styles */
+.lesson-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: #FFFFFF; /* Ensure header text is visible */
+}
+
+.lesson-card p {
+    font-size: 1rem;
+    color: #FFFFFF; /* Ensure paragraph text is visible */
+    margin: 0; /* Remove unnecessary margins */
+}
+
+/* Fix hover effect for lesson cards */
+.lesson-card:hover {
+    transform: scale(1.05);
+    background: rgba(138, 43, 226, 0.9); /* Slightly brighter Neon Purple on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    border-color: #00FFFF; /* Neon Blue border on hover */
+}
+
+/* Platform-specific color coding */
+.lesson-card.discord {
+    background-color: #7289da; /* Discord blue */
+    color: #fff;
+}
+
+.lesson-card.vrchat {
+    background-color: #ffcc00; /* VRChat yellow */
+    color: #333;
+}
+
+.lesson-card.minecraft {
+    background-color: #34c759; /* Minecraft green */
+    color: #fff;
+}
+
+/* Importance-based color coding */
+.lesson-card.high-importance {
+    border: 2px solid #ff3b30; /* High importance: red border */
+}
+
+.lesson-card.medium-importance {
+    border: 2px solid #ff9500; /* Medium importance: orange border */
+}
+
+.lesson-card.low-importance {
+    border: 2px solid #4cd964; /* Low importance: green border */
+}
+
+/* Text alignment for lesson cards */
+.lesson-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.2em;
+}
+
+.lesson-card p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+.lesson-header {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to right, #ff7eb3, #ff758c);
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.lesson-header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.lesson-header .lesson-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.lesson-body {
+    padding: 2rem;
+    background: linear-gradient(135deg, #8A2BE2, #00FFFF); /* Match gradient with other sections */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+    color: #FFFFFF; /* Ensure text is visible on gradient */
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #ff758c;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ff758c;
+    padding-bottom: 0.5rem;
+}
+
+.styled-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.styled-list li {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+    font-size: 1.2rem;
+    color: #333; /* Dark text for better contrast */
+    font-size: 1.1rem; /* Slightly larger for readability */
+}
+
+.styled-list li::before {
+    content: "✔️";
+    position: absolute;
+    left: 0;
+    color: #ff758c; /* Keep the checkmark color consistent */
+}
+
+.highlight {
+    color: #ff7eb3;
+    font-weight: bold;
+}
+
+/* About Section */
+.about {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-top: 5px solid #7289da; /* Discord accent */
+}
+
+.about h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.about p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Contact Section */
+.contact {
+    padding: 2rem;
+    background-color: #fff;
+    border-top: 5px solid #4caf50; /* Minecraft accent */
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact input, .contact textarea, .contact button {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact button {
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact button:hover {
+    background-color: #2196f3;
+}
+
+/* Footer */
+.footer-content {
+    text-align: center;
+    padding: 1rem;
+    background-color: #222;
+    color: #fff;
+    border-top: 5px solid #ff5722; /* FiveM accent */
+}
+
+.footer-content p {
+    margin-bottom: 0.5rem; /* Adjust spacing for multiple lines */
+    font-size: 0.9rem; /* Slightly smaller for secondary text */
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #00bcd4;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.9); /* Dark footer */
+    color: #FFFFFF;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+}
+
+.social-links a {
+    color: #00FFFF; /* Neon Blue links */
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #8A2BE2; /* Neon Purple on hover */
+}
+
+#error-message {
+    color: red;
+    display: none;
+    margin-top: 1rem;
+}
+
+#password-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#password-overlay input {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+#password-overlay button {
+    background: #8A2BE2;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#password-overlay button:hover {
+    background: #00FFFF;
+}
+
+.highlighted-title {
+    color: #FFFFFF; /* Ensure text is white for visibility */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add shadow for better contrast */
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Animated gradient for the logo */
+.animated-gradient {
+    background: linear-gradient(90deg, #00FFFF, #8A2BE2, #00FFFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-wigwag 10s infinite ease-in-out;
+    font-size: 1.8rem;
+    font-weight: bold;
+    background-size: 200%; /* Extend background for smooth animation */
+}
+
+@keyframes gradient-wigwag {
+    0% {
+        background-position: 100% 50%; /* Start at the right */
+    }
+    50% {
+        background-position: 0% 50%; /* Move to the left */
+    }
+    100% {
+        background-position: 100% 50%; /* Move back to the right */
+    }
+}
+
+/* Updated marquee announcement styles */
+.marquee {
+    background: linear-gradient(90deg, #8A2BE2, #00FFFF); /* Neon gradient background */
+    color: #FFFFFF;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.marquee p {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    animation: marquee-fade 15s ease-in-out infinite; /* Slower animation with smooth easing */
+    letter-spacing: 2px; /* Add spacing for better readability */
+}
+
+@keyframes marquee-fade {
+    0% {
+        transform: translateX(0); /* Start in the center */
+        opacity: 1; /* Fully visible */
+    }
+    45% {
+        transform: translateX(100%); /* Move off-screen to the right */
+        opacity: 0; /* Start fading out */
+    }
+    55% {
+        transform: translateX(100%); /* Fully off-screen on the right */
+        opacity: 0; /* Still invisible */
+    }
+    60% {
+        transform: translateX(-100%); /* Reappear from the left */
+        opacity: 0; /* Still invisible */
+    }
+    100% {
+        transform: translateX(0); /* Return to the center */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Updated progress bar styles */
+.progress-section {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    text-align: center;
+    width: 250px; /* Fixed width for consistent appearance */
+}
+
+.progress-bar-container {
+    background: #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 10px; /* Smaller height for compact design */
+    width: 100%;
+    margin: 5px 0;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #8A2BE2, #00FFFF);
+    height: 100%;
+    width: 0%; /* Initial progress */
+    transition: width 0.3s ease-in-out;
+}
+
+#progress-text {
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    margin-top: 5px;
+}
+
+/* Platform-specific styling */
+.carousel-item img {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.carousel-item:hover img {
+    transform: scale(1.2);
+    filter: grayscale(0%);
+}
