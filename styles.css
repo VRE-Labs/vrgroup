@@ -559,3 +559,38 @@ footer {
     transform: scale(1.2);
     filter: grayscale(0%);
 }
+
+/* Style for hidden hyperlink text in footer */
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #00FFFF; /* Neon Blue */
+    border-radius: 50%;
+    text-decoration: none;
+    position: relative;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a::before {
+    content: attr(aria-label);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+.social-links a:hover {
+    background-color: #8A2BE2; /* Neon Purple on hover */
+    transform: scale(1.1);
+}
