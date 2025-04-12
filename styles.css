@@ -40,6 +40,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    text-align: center;
 }
 
 /* Navbar */
@@ -235,6 +236,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     line-height: 1.8;
     color: #FFFFFF; /* Ensure text is visible on gradient */
+    text-align: center;
 }
 
 .section-title {
@@ -593,4 +595,43 @@ footer {
 .social-links a:hover {
     background-color: #8A2BE2; /* Neon Purple on hover */
     transform: scale(1.1);
+}
+
+/* Shrink header animation */
+.header-animation {
+    width: 150px; /* Shrink to a smaller size */
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Center navigation buttons */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.button {
+    background: linear-gradient(135deg, #8A2BE2, #00FFFF); /* Neon gradient */
+    color: #FFFFFF;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+
+.button:hover {
+    background: #00FFFF; /* Neon Blue on hover */
+    transform: scale(1.1);
+}
+
+/* Center all text */
+body, .lesson-body, .platform-list, .footer-content {
+    text-align: center;
 }
