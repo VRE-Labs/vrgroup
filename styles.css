@@ -599,8 +599,10 @@ footer {
 
 /* Shrink header animation */
 .header-animation {
-    width: 150px; /* Shrink to a smaller size */
-    height: auto;
+    width: 100%;
+    max-width: 800px;
+    height: 100px; /* Thin and stretched */
+    object-fit: cover;
     margin: 0 auto;
     display: block;
 }
@@ -634,4 +636,28 @@ footer {
 /* Center all text */
 body, .lesson-body, .platform-list, .footer-content {
     text-align: center;
+}
+
+/* Social links with sleek icons */
+.social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #00FFFF; /* Neon Blue */
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #8A2BE2; /* Neon Purple on hover */
+    transform: scale(1.1);
+}
+
+.social-links i {
+    pointer-events: none; /* Ensure only the link is clickable */
 }
