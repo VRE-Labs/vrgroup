@@ -75,6 +75,15 @@ body {
     color: #00FFFF;
 }
 
+/* Ensure navigation buttons are perfectly centered */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0; /* Add spacing around the buttons */
+}
+
 /* Hero Section */
 .hero {
     background: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
@@ -601,7 +610,7 @@ footer {
 .header-animation {
     width: 100%;
     max-width: 800px;
-    height: 160px; /* Increased height by about 3 inches */
+    height: 160px; /* Matches the updated size in index.html */
     object-fit: cover;
     margin: 0 auto;
     display: block;
