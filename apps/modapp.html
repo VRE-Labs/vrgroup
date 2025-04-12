@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moderator Application - Virtual Reality Entertainment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #5C6BC0;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #3f51b5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Moderator Application - Virtual Reality Entertainment</h1>
+        <form id="moderatorApplicationForm">
+            <label for="username">Discord Username</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="experience">Experience as a Moderator</label>
+            <textarea id="experience" name="experience" rows="5" required></textarea>
+            
+            <label for="why">Why do you want to be a Moderator?</label>
+            <textarea id="why" name="why" rows="5" required></textarea>
+            
+            <label for="availability">How often are you available?</label>
+            <input type="text" id="availability" name="availability" required>
+            
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <script>
+        // Handle the form submission
+        document.getElementById('moderatorApplicationForm').addEventListener('submit', function (event) {
+            event.preventDefault();  // Prevent the default form submission
+
+            // Collect form data
+            const formData = {
+                username: document.getElementById('username').value,
+                experience: document.getElementById('experience').value,
+                why: document.getElementById('why').value,
+                availability: document.getElementById('availability').value
+            };
+
+            // Structure the data for the Discord embed
+            const embedData = {
+                embeds: [
+                    {
+                        title: "New Moderator Application",
+                        description: "A new moderator application has been submitted.",
+                        color: 5814783,
+                        fields: [
+                            { name: "Discord Username", value: formData.username, inline: false },
+                            { name: "Experience as a Moderator", value: formData.experience, inline: false },
+                            { name: "Why do you want to be a Moderator?", value: formData.why, inline: false },
+                            { name: "Availability", value: formData.availability, inline: false }
+                        ]
+                    }
+                ]
+            };
+
+            // Send the data to the Discord webhook
+            fetch('https://discord.com/api/webhooks/1355339311565766864/UEibg10FAf6Urtr1Hf4bjOOUDRPsmGbXNbtjUZ_smbdaDDBpbFD6AioCwf2YiMC9Lz3a', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(embedData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Your application has been submitted!');
+                // Optionally, reset the form
+                document.getElementById('moderatorApplicationForm').reset();
+            })
+            .catch(error => {
+                console.error('Error submitting the application:', error);
+                alert('There was an error submitting your application. Please try again later.');
+            });
+        });
+    </script>
+</body>
+</html>

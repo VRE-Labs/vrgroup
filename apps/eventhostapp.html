@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Host Application - Virtual Reality Entertainment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #5C6BC0;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #3f51b5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Event Host Application - Virtual Reality Entertainment</h1>
+        <form id="eventHostApplicationForm">
+            <label for="username">Discord Username</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="eventExperience">Experience in Event Hosting</label>
+            <textarea id="eventExperience" name="eventExperience" rows="5" required></textarea>
+            
+            <label for="whyEventHost">Why do you want to be an Event Host?</label>
+            <textarea id="whyEventHost" name="whyEventHost" rows="5" required></textarea>
+            
+            <label for="eventSkills">What skills do you bring to hosting events?</label>
+            <textarea id="eventSkills" name="eventSkills" rows="5" required></textarea>
+            
+            <label for="availability">How often are you available to host events?</label>
+            <input type="text" id="availability" name="availability" required>
+            
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <script>
+        // Handle the form submission
+        document.getElementById('eventHostApplicationForm').addEventListener('submit', function (event) {
+            event.preventDefault();  // Prevent the default form submission
+
+            // Collect form data
+            const formData = {
+                username: document.getElementById('username').value,
+                eventExperience: document.getElementById('eventExperience').value,
+                whyEventHost: document.getElementById('whyEventHost').value,
+                eventSkills: document.getElementById('eventSkills').value,
+                availability: document.getElementById('availability').value
+            };
+
+            // Structure the data for the Discord embed
+            const embedData = {
+                embeds: [
+                    {
+                        title: "New Event Host Application",
+                        description: "A new event host application has been submitted.",
+                        color: 5814783,
+                        fields: [
+                            { name: "Discord Username", value: formData.username, inline: false },
+                            { name: "Experience in Event Hosting", value: formData.eventExperience, inline: false },
+                            { name: "Why do you want to be an Event Host?", value: formData.whyEventHost, inline: false },
+                            { name: "Skills for Hosting Events", value: formData.eventSkills, inline: false },
+                            { name: "Availability", value: formData.availability, inline: false }
+                        ]
+                    }
+                ]
+            };
+
+            // Send the data to the Discord webhook
+            fetch('https://discord.com/api/webhooks/1355339311565766864/UEibg10FAf6Urtr1Hf4bjOOUDRPsmGbXNbtjUZ_smbdaDDBpbFD6AioCwf2YiMC9Lz3a', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(embedData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Your application has been submitted!');
+                // Optionally, reset the form
+                document.getElementById('eventHostApplicationForm').reset();
+            })
+            .catch(error => {
+                console.error('Error submitting the application:', error);
+                alert('There was an error submitting your application. Please try again later.');
+            });
+        });
+    </script>
+</body>
+</html>

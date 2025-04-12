@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VRE Group - Home</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e1e2f, #2a2a3b);
+            color: #e4e4e7;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            position: relative;
+            text-align: center;
+            padding: 4rem 1rem;
+            color: #fff;
+            background: linear-gradient(135deg, #3a3a4d, #1e1e2f);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: 800;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+        header img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        nav a {
+            color: #00bcd4;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        nav a:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        /* Main Content Styles */
+        main {
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        main p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: justify;
+            line-height: 1.8;
+            color: #d1d1d1;
+        }
+        ul.platform-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 1rem auto;
+            text-align: left;
+            max-width: 800px;
+        }
+        ul.platform-list li {
+            text-align: justify;
+            font-size: 1.2rem;
+        }
+        .highlight {
+            color: #00bcd4;
+            font-weight: bold;
+        }
+
+        /* Platforms Section */
+        .platforms {
+            margin-top: 3rem;
+        }
+        .platforms h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #00bcd4;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding: 1rem;
+            scroll-snap-type: x mandatory;
+        }
+        .carousel-item {
+            flex: 0 0 auto;
+            scroll-snap-align: center;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            filter: grayscale(100%);
+        }
+        .carousel-item:hover {
+            transform: scale(1.2);
+            filter: grayscale(0%);
+        }
+        .carousel img {
+            width: 250px;
+            height: 350px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 15px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Footer Styles */
+        footer {
+            background: linear-gradient(135deg, #121212, #1e1e2f);
+            color: #e4e4e7;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+        }
+        footer p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+        footer a {
+            color: #00bcd4;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* Confetti Animation */
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./images/header-animation.gif" alt="Header Animation">
+        <h1>Welcome to the Virtual Reality Entertainment (VRE) Group</h1>
+    </header>
+    <nav>
+        <a href="./vre-appeals/index.html">Appeals</a>
+        <a href="./vre-staff-training/index.html" onclick="return verifyPassword()">Staff Training</a>
+    </nav>
+    <main>
+        <p>
+            <span class="highlight">We are an event-entertainment group.</span><br />
+            Our mission is to bring people together through <span class="highlight">Virtual Reality platforms.</span><br />
+            These include:<br />
+        </p>
+        <ul class="platform-list">
+            <li>- <span class="highlight">VRChat</span></li>
+            <li>- <span class="highlight">Discord</span></li>
+            <li>- <span class="highlight">FiveM</span></li>
+            <li>- <span class="highlight">Minecraft</span></li>
+            <li>- <span class="highlight">and YouTube.</span></li>
+        </ul>
+        <p>
+            Join us to experience the future of entertainment and connection.<br />
+        </p>
+        <div class="platforms">
+            <h2>Join Us On:</h2>
+            <div class="carousel">
+                <div class="carousel-item">
+                    <a href="https://vrchat.com" target="_blank">
+                        <img src="./images/vrchat-logo-poster.jpg" alt="VRChat" />
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="https://discord.gg/hyMKpcE5pw" target="_blank">
+                        <img src="./images/discord-logo-icon.jpg" alt="Discord" />
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="https://fivem.net" target="_blank">
+                        <img src="./images/fivem-logo.jpg" alt="FiveM" />
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="https://minecraft.net" target="_blank">
+                        <img src="./images/minecraft-review-image.jpg" alt="Minecraft" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023-2026 Virtual Reality Entertainment & VRE Labs. Made with love by VRE Labs.</p>
+        <p>
+            <a href="https://x.com/VRE_Group" target="_blank">Twitter</a> | 
+            <a href="https://bsky.app/profile/vrentertainment.bsky.social" target="_blank">Bluesky</a> | 
+            <a href="https://www.youtube.com/@VirtualRealityEntertainment/featured" target="_blank">YouTube</a>
+        </p>
+    </footer>
+    <script>
+        function verifyPassword() {
+            const password = prompt("Please enter the password to access Staff Training:");
+            if (password === "VRELabs") {
+                return true; // Allow navigation
+            } else {
+                alert("Incorrect password. Access denied.");
+                return false; // Prevent navigation
+            }
+        }
+
+        // Confetti effect for April 12th
+        function startConfetti() {
+            const confettiContainer = document.createElement('div');
+            confettiContainer.style.position = 'fixed';
+            confettiContainer.style.top = '0';
+            confettiContainer.style.left = '0';
+            confettiContainer.style.width = '100%';
+            confettiContainer.style.height = '100%';
+            confettiContainer.style.pointerEvents = 'none';
+            confettiContainer.style.zIndex = '9999';
+            document.body.appendChild(confettiContainer);
+
+            for (let i = 0; i < 150; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.position = 'absolute';
+                confetti.style.width = '10px';
+                confetti.style.height = '10px';
+                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                confetti.style.top = `${-Math.random() * 20}px`;
+                confetti.style.left = `${Math.random() * 100}%`;
+                confetti.style.opacity = Math.random();
+                confetti.style.animation = `fall ${Math.random() * 3 + 2s linear infinite`;
+                confettiContainer.appendChild(confetti);
+            }
+
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes fall {
+                    0% { transform: translateY(0) rotate(0deg); }
+                    100% { transform: translateY(100vh) rotate(360deg); }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        // Check if today is April 12th
+        const today = new Date();
+        if (today.getMonth() === 3 && today.getDate() === 8) { // April is month 3 (0-indexed)
+            startConfetti();
+        }
+    </script>
+</body>
+</html>
