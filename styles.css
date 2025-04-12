@@ -45,11 +45,11 @@ body {
 
 /* Navbar */
 .navbar {
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black for navbar */
-    padding: 1rem 2rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center; /* Center the nav-buttons horizontally */
+    align-items: center; /* Center the nav-buttons vertically */
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black for navbar */
 }
 
 .navbar .logo {
@@ -601,7 +601,7 @@ footer {
 .header-animation {
     width: 100%;
     max-width: 800px;
-    height: 100px; /* Thin and stretched */
+    height: 160px; /* Increased height by about 3 inches */
     object-fit: cover;
     margin: 0 auto;
     display: block;
