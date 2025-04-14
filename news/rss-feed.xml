@@ -2,26 +2,26 @@
 <rss version="2.0">
     <channel>
         <title>UP↑Link – The Official VRE Newsletter</title>
-        <link>https://vre-group.com/vre-newsletter.html</link>
+        <link>https://protex-studios.github.io/vrgroup/news/vre-newsletter.html</link> <!-- Updated link -->
         <description>Stay updated with the latest news, events, and updates from Virtual Reality Entertainment.</description>
         <language>en-us</language>
         <item>
             <title>VRE's Upcoming Events</title>
-            <link>https://vre-group.com/articles/upcoming-events</link>
+            <link>https://protex-studios.github.io/vrgroup/news/articles/UPcoming-events.html</link> <!-- Updated link -->
             <description>Discover the exciting events we have planned for the next quarter.</description>
-            <pubDate>Wed, 01 Nov 2023 12:00:00 GMT</pubDate>
+            <pubDate>Sun, 13 Apr 2025 18:23:00 MST</pubDate> <!-- Updated date -->
         </item>
         <item>
             <title>Community Highlights</title>
             <link>https://vre-group.com/articles/community-highlights</link>
             <description>Spotlight on our amazing community members and their contributions.</description>
-            <pubDate>Wed, 25 Oct 2023 12:00:00 GMT</pubDate>
+            <pubDate>Sun, 13 Apr 2025 18:23:00 MST</pubDate> <!-- Updated date -->
         </item>
         <item>
             <title>Tech Updates</title>
             <link>https://vre-group.com/articles/tech-updates</link>
             <description>Learn about the latest updates to our platforms and services.</description>
-            <pubDate>Wed, 18 Oct 2023 12:00:00 GMT</pubDate>
+            <pubDate>Sun, 13 Apr 2025 18:23:00 MST</pubDate> <!-- Updated date -->
         </item>
     </channel>
 </rss>
