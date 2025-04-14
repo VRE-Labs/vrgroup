@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Progress bar logic
-    const totalLessons = 25;
+    const totalLessons = 26;
     const progressBar = document.getElementById('progress-bar');
     const progressText = document.getElementById('progress-text');
     const completedLessons = JSON.parse(localStorage.getItem('completedLessons')) || [];
