@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Member Retention Initiative</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        /* VRE-specific styles for lesson8 */
+        .lesson-header {
+            background: linear-gradient(135deg, #8A2BE2, #00FFFF);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .lesson-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .lesson-header p {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .lesson-body {
+            background: rgba(0, 0, 0, 0.8);
+            color: #FFFFFF;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            line-height: 1.8;
+        }
+
+        .lesson-section {
+            margin-bottom: 2rem;
+        }
+
+        .lesson-section h2 {
+            color: #00FFFF;
+            border-bottom: 2px solid #8A2BE2;
+            padding-bottom: 0.5rem;
+        }
+
+        .styled-list li {
+            margin-bottom: 1rem;
+        }
+
+        .answer-button {
+            background: #8A2BE2;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .answer-button:hover {
+            background: #00FFFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-header">
+        <h1 class="highlighted-title">🌟 New Member Retention Initiative</h1>
+        <p class="lesson-subtitle">“Guiding Growth, Building Community.”</p>
+    </div>
+
+    <div class="lesson-body">
+        <div id="lesson-sections">
+            <!-- Section 1 -->
+            <section id="section-1" class="lesson-section">
+                <h2 class="section-title">🧠 Section 1: Leadership Overview</h2>
+                <p>The New Member Retention Initiative focuses on engagement, welcoming new members, and maintaining a positive atmosphere. Leaders play a critical role in setting the standard for excellence in member interaction.</p>
+                <p><strong>Key Objectives:</strong></p>
+                <ul class="styled-list">
+                    <li>Engagement Excellence: Welcome new members and foster positive engagement.</li>
+                    <li>Setting the Example: Model ideal behavior for the team and community.</li>
+                    <li>Creating a Supportive Environment: Ensure every new member feels like they belong.</li>
+                </ul>
+                <p><strong>Question:</strong> What is the primary goal of the New Member Retention Initiative?</p>
+                <button class="answer-button" data-correct="true">To create a welcoming and supportive community</button>
+                <button class="answer-button" data-correct="false">To focus solely on events</button>
+                <button class="answer-button" data-correct="false">To avoid engaging with new members</button>
+            </section>
+
+            <!-- Section 2 -->
+            <section id="section-2" class="lesson-section" style="display: none;">
+                <h2 class="section-title">⚙️ Section 2: Leadership Expectations</h2>
+                <p>Leaders are expected to model behavior that encourages engagement and builds connections:</p>
+                <ul class="styled-list">
+                    <li>Acknowledge new members with warm, friendly greetings.</li>
+                    <li>Encourage participation by asking open-ended questions.</li>
+                    <li>Address questions and offer support with patience and care.</li>
+                </ul>
+                <p><strong>Question:</strong> How should leaders welcome new members?</p>
+                <button class="answer-button" data-correct="true">With warm, friendly greetings</button>
+                <button class="answer-button" data-correct="false">By ignoring them</button>
+                <button class="answer-button" data-correct="false">By pressuring them to participate</button>
+            </section>
+
+            <!-- Section 3 -->
+            <section id="section-3" class="lesson-section" style="display: none;">
+                <h2 class="section-title">🌀 Section 3: Best Practices for Leadership</h2>
+                <p>Leaders can go above and beyond by following these best practices:</p>
+                <ul class="styled-list">
+                    <li><strong>Be Proactive:</strong> Take the first step to engage with new members.</li>
+                    <li><strong>Follow Through:</strong> Ensure promises to new members are fulfilled.</li>
+                    <li><strong>Be Consistent:</strong> Show up for new members regularly.</li>
+                    <li><strong>Lead with Empathy:</strong> Approach shy or hesitant members with warmth and understanding.</li>
+                </ul>
+                <p><strong>Question:</strong> Why is consistency important in leadership?</p>
+                <button class="answer-button" data-correct="true">It encourages others to follow suit</button>
+                <button class="answer-button" data-correct="false">It avoids accountability</button>
+                <button class="answer-button" data-correct="false">It discourages participation</button>
+            </section>
+
+            <!-- Completion Message -->
+            <div id="completion-message" style="display: none;">
+                <h2>🎉 Lesson Complete!</h2>
+                <p>Congratulations! You've completed the New Member Retention Initiative. Use these strategies to create a welcoming, inclusive, and thriving community.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="progress-section">
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+        <p id="progress-text">Progress: 0%</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023-2026 VRE & VRE Labs. All rights reserved.</p>
+        <p>Made for VRE with Love by VRE Labs.</p>
+    </footer>
+
+    <script src="../../scripts.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".lesson-section");
+            const progressBar = document.querySelector(".progress-bar");
+            const progressText = document.querySelector("#progress-text");
+            const completionMessage = document.querySelector("#completion-message");
+            let progress = 0;
+            let currentSectionIndex = 0;
+
+            function updateProgress(increment) {
+                progress = Math.min(progress + increment, 100);
+                progressBar.style.width = `${progress}%`;
+                progressText.textContent = `Progress: ${progress}%`;
+            }
+
+            function showNextSection() {
+                if (currentSectionIndex < sections.length - 1) {
+                    sections[currentSectionIndex].style.display = "none";
+                    currentSectionIndex++;
+                    sections[currentSectionIndex].style.display = "block";
+                } else {
+                    sections[currentSectionIndex].style.display = "none";
+                    completionMessage.style.display = "block";
+                }
+            }
+
+            document.querySelectorAll(".answer-button").forEach(button => {
+                button.addEventListener("click", () => {
+                    if (button.dataset.correct === "true") {
+                        updateProgress(33);
+                        showNextSection();
+                    } else {
+                        alert("Incorrect answer. Try again.");
+                    }
+                });
+            });
+
+            sections[currentSectionIndex].style.display = "block";
+        });
+    </script>
+</body>
+</html>
