@@ -13,113 +13,62 @@
     </div>
 
     <div class="lesson-body">
-        <section>
-            <h2 class="section-title">📌 Module Objective</h2>
-            <p>To refresh and reinforce leadership fundamentals with a focus on <span class="highlight">Accountability</span>, <span class="highlight">Proactivity</span>, <span class="highlight">Team Communication</span>, and <span class="highlight">Community Trust</span>.</p>
-            <p>This module is perfect for leadership recalibration after an incident, during onboarding, or as a quarterly refresher.</p>
-        </section>
+        <!-- Section Container -->
+        <div id="module-sections">
+            <!-- Section 1 -->
+            <section id="section-1" class="module-section">
+                <h2 class="section-title">🧠 Section 1: Accountability</h2>
+                <p>Leadership requires accountability. Own your mistakes, learn from them, and lead with transparency.</p>
+                <p><strong>Question:</strong> What should you do if something goes wrong?</p>
+                <button class="answer-button" data-correct="false">Ignore it</button>
+                <button class="answer-button" data-correct="true">Acknowledge it</button>
+                <button class="answer-button" data-correct="false">Blame others</button>
+            </section>
 
-        <section>
-            <h2 class="section-title">🧠 Section 1: The Four Pillars of Leadership</h2>
-            <blockquote>“A good leader <em>knows</em> the path. A great one <em>walks</em> it. An unforgettable one <em>lights</em> it for others.”</blockquote>
+            <!-- Section 2 -->
+            <section id="section-2" class="module-section" style="display: none;">
+                <h2 class="section-title">⚙️ Section 2: Proactivity</h2>
+                <p>Proactivity is key to leadership. Anticipate problems and always have a backup plan.</p>
+                <p><strong>Question:</strong> What is the best way to handle potential issues?</p>
+                <button class="answer-button" data-correct="true">Anticipate them</button>
+                <button class="answer-button" data-correct="false">Ignore them</button>
+                <button class="answer-button" data-correct="false">React after they occur</button>
+            </section>
 
-            <h3>🧩 1. Accountability</h3>
-            <ul class="styled-list">
-                <li>You’re not responsible for perfection—just <em>presence</em> and <em>ownership</em>.</li>
-                <li>If something goes wrong under your watch, lead the post-mortem—not the excuse parade.</li>
-                <li>Own the L, learn from it, and lead with transparency.</li>
-            </ul>
-            <p><strong>💬 Prompt:</strong> <em>“Think of a time where a delay or miscommunication happened. Did you address it clearly? What could have been done differently?”</em></p>
+            <!-- Section 3 -->
+            <section id="section-3" class="module-section" style="display: none;">
+                <h2 class="section-title">🗣️ Section 3: Team Communication</h2>
+                <p>Effective communication ensures your team is aligned and informed.</p>
+                <p><strong>Question:</strong> What is the best way to ensure team alignment?</p>
+                <button class="answer-button" data-correct="true">Delegate and confirm responsibilities</button>
+                <button class="answer-button" data-correct="false">Assume everyone knows their role</button>
+                <button class="answer-button" data-correct="false">Work alone</button>
+            </section>
 
-            <h3>⚙️ 2. Proactivity</h3>
-            <ul class="styled-list">
-                <li>Don’t wait for problems to happen—anticipate them.</li>
-                <li>Confirm roles, test setups, and always have a Plan B (and a person B).</li>
-                <li>Make use of event calendars, reminders, and written expectations.</li>
-            </ul>
-            <p><strong>📌 Key Tip:</strong> Use time blocking on your calendar to plan <em>pre-event checks</em> and <em>team confirmations</em>.</p>
+            <!-- Final Quiz -->
+            <section id="final-quiz" class="module-section" style="display: none;">
+                <h2 class="section-title">🧩 Final Quiz</h2>
+                <p>Test your knowledge of the Leadership Refresher Module.</p>
+                <div class="question">
+                    <p>1. What is the key to building community trust?</p>
+                    <button class="answer-button" data-correct="true">Consistency</button>
+                    <button class="answer-button" data-correct="false">Silence</button>
+                    <button class="answer-button" data-correct="false">Perfection</button>
+                </div>
+                <div class="question">
+                    <p>2. What should you do if something goes wrong?</p>
+                    <button class="answer-button" data-correct="true">Acknowledge it</button>
+                    <button class="answer-button" data-correct="false">Ignore it</button>
+                    <button class="answer-button" data-correct="false">Blame others</button>
+                </div>
+            </section>
 
-            <h3>🗣️ 3. Team Communication</h3>
-            <ul class="styled-list">
-                <li>Leadership doesn’t mean soloing—it means <em>delegating and informing</em>.</li>
-                <li>Tag team members, confirm responsibilities, and always assume nothing has been seen until it’s confirmed.</li>
-                <li>Your team doesn’t follow what you <em>think</em>—they follow what you <em>say</em>.</li>
-            </ul>
-            <p><strong>💡 Best Practice:</strong> After assigning roles, drop a checklist message:</p>
-            <pre>
-✅ Ares (Lead Host)
-✅ Skye (Backup Host)
-✅ Lys (Mod)
-“Everyone good to go? Ping me if issues!”
-            </pre>
-
-            <h3>🤝 4. Community Trust</h3>
-            <ul class="styled-list">
-                <li>Your consistency sets the tone. If you’re late, disengaged, or scattered, the community <em>feels</em> that.</li>
-                <li>Reinforce your reliability by being the calm in the storm.</li>
-                <li>Communicate early and clearly when changes occur.</li>
-            </ul>
-            <p><strong>🔊 Phrase to Remember:</strong> <em>“Clarity is kindness. Silence is chaos.”</em></p>
-        </section>
-
-        <section>
-            <h2 class="section-title">🔁 Section 2: The Event Lifecycle Checklist</h2>
-            <ul class="styled-list">
-                <li><strong>Pre-Event (24–48 Hours Prior):</strong></li>
-                <ul>
-                    <li>Finalized time/date listed on calendar & Discord</li>
-                    <li>Confirmed co-hosts & mods</li>
-                    <li>Prepped materials/worlds/media</li>
-                    <li>Backups alerted</li>
-                    <li>Reminder post sent</li>
-                </ul>
-                <li><strong>Day Of (1–2 Hours Prior):</strong></li>
-                <ul>
-                    <li>Post hype ping or story</li>
-                    <li>Test world/tech setup</li>
-                    <li>Confirm backup presence</li>
-                    <li>Load in 15 mins early</li>
-                    <li>Send final “event starts soon!” message</li>
-                </ul>
-                <li><strong>Post-Event:</strong></li>
-                <ul>
-                    <li>Thank attendees</li>
-                    <li>Submit F.L.A.R.E. report</li>
-                    <li>Acknowledge mishaps (if applicable)</li>
-                    <li>Record highlights for repeat events or community reels</li>
-                    <li>Offer feedback privately to co-hosts/staff</li>
-                </ul>
-            </ul>
-        </section>
-
-        <section>
-            <h2 class="section-title">✨ Section 3: Rebuilding After a Miss</h2>
-            <p>If something goes wrong:</p>
-            <ul class="styled-list">
-                <li>Acknowledge publicly:</li>
-                <blockquote>“Hey folks! Last night’s event had a delay due to some timing missteps on our end. That’s on us—and we’re tightening up our pre-event coordination for the future.”</blockquote>
-                <li>Debrief internally. Don’t wait for a crisis to start a conversation.</li>
-                <li>Reflect in the <span class="highlight">SPARK</span> logs or a leadership journal.</li>
-                <li>Apply a small, clear change (e.g., backup host confirmation form, 15-min prep rule).</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2 class="section-title">🗓️ Optional Challenge: The Leadership Pulse</h2>
-            <p>Each leadership member should set a personal “pulse check” once every two weeks. Ask yourself:</p>
-            <ul class="styled-list">
-                <li>Have I been proactive, or reactive?</li>
-                <li>Have I supported my team?</li>
-                <li>Have I followed through on what I promised?</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2 class="section-title">📝 Completion Acknowledgement</h2>
-            <p>✅ You’ve completed the Leadership Refresher Module.</p>
-            <p>Drop a message in #leadership-logs or tag an Officer with:</p>
-            <blockquote>“Refresher complete – recalibrated and ready.” 🔧✨</blockquote>
-        </section>
+            <!-- Completion Message -->
+            <div id="completion-message" style="display: none;">
+                <h2>🎉 Module Complete!</h2>
+                <p>Great job! You've completed the Leadership Refresher Module.</p>
+            </div>
+        </div>
     </div>
 
     <!-- Progress Bar Section -->
@@ -130,29 +79,7 @@
         <p id="progress-text">Progress: 0%</p>
     </div>
 
-    <!-- Quiz Section -->
-    <div class="quiz-container">
-        <h2 class="section-title">🧩 Quiz: Test Your Knowledge</h2>
-        <div class="question">
-            <p>1. What is the key to building community trust?</p>
-            <button>Consistency</button>
-            <button>Silence</button>
-            <button>Perfection</button>
-        </div>
-        <div class="question">
-            <p>2. What should you do if something goes wrong?</p>
-            <button>Ignore it</button>
-            <button>Acknowledge it</button>
-            <button>Blame others</button>
-        </div>
-    </div>
-
-    <!-- Completion Message -->
-    <div id="completion-message" style="display: none;">
-        <h2>🎉 Module Complete!</h2>
-        <p>Great job! You've completed the Leadership Refresher Module.</p>
-    </div>
-
     <script src="../scripts.js"></script>
+    <script src="module1.js"></script>
 </body>
 </html>
