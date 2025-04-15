@@ -273,10 +273,15 @@ body {
 
 /* About Section */
 .about {
+    background: rgba(0, 0, 0, 0.9); /* Increase opacity for better contrast */
+    color: #FFFFFF; /* White text for readability */
     padding: 2rem;
-    background-color: #f9f9f9;
+    border-radius: 10px;
     text-align: center;
-    border-top: 5px solid #7289da; /* Discord accent */
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add subtle shadow for depth */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add shadow to text for better visibility */
 }
 
 .about h2 {
