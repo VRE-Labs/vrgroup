@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Management for Leaders</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        /* VRE-specific styles for lesson4 */
+        .lesson-header {
+            background: linear-gradient(135deg, #8A2BE2, #00FFFF);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .lesson-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .lesson-header p {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .lesson-body {
+            background: rgba(0, 0, 0, 0.8);
+            color: #FFFFFF;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            line-height: 1.8;
+        }
+
+        .lesson-section {
+            margin-bottom: 2rem;
+        }
+
+        .lesson-section h2 {
+            color: #00FFFF;
+            border-bottom: 2px solid #8A2BE2;
+            padding-bottom: 0.5rem;
+        }
+
+        .answer-button {
+            background: #8A2BE2;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .answer-button:hover {
+            background: #00FFFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-header">
+        <h1 class="highlighted-title">🌟 Time Management for Leaders</h1>
+        <p class="lesson-subtitle">“Time management is life management.”</p>
+    </div>
+
+    <div class="lesson-body">
+        <div id="lesson-sections">
+            <!-- Section 1 -->
+            <section id="section-1" class="lesson-section">
+                <h2 class="section-title">🧠 Section 1: Prioritization</h2>
+                <p>Effective leaders prioritize tasks to focus on what matters most.</p>
+                <ul class="styled-list">
+                    <li>Use tools like the Eisenhower Matrix to categorize tasks.</li>
+                    <li>Focus on high-impact activities that align with team goals.</li>
+                </ul>
+                <p><strong>Question:</strong> What is a key tool for prioritizing tasks?</p>
+                <button class="answer-button" data-correct="true">Eisenhower Matrix</button>
+                <button class="answer-button" data-correct="false">Guesswork</button>
+                <button class="answer-button" data-correct="false">Avoidance</button>
+            </section>
+
+            <!-- Section 2 -->
+            <section id="section-2" class="lesson-section" style="display: none;">
+                <h2 class="section-title">⚙️ Section 2: Delegation</h2>
+                <p>Delegation is essential for leaders to manage their time effectively.</p>
+                <ul class="styled-list">
+                    <li>Identify tasks that can be handled by team members.</li>
+                    <li>Provide clear instructions and trust your team to deliver.</li>
+                </ul>
+                <p><strong>Question:</strong> What is the key to effective delegation?</p>
+                <button class="answer-button" data-correct="true">Trust your team</button>
+                <button class="answer-button" data-correct="false">Micromanage</button>
+                <button class="answer-button" data-correct="false">Do everything yourself</button>
+            </section>
+
+            <!-- Section 3 -->
+            <section id="section-3" class="lesson-section" style="display: none;">
+                <h2 class="section-title">🗣️ Section 3: Avoiding Burnout</h2>
+                <p>Leaders must manage their time to avoid burnout and maintain productivity.</p>
+                <ul class="styled-list">
+                    <li>Set boundaries and take regular breaks.</li>
+                    <li>Learn to say no to unnecessary commitments.</li>
+                </ul>
+                <p><strong>Question:</strong> How can leaders avoid burnout?</p>
+                <button class="answer-button" data-correct="true">Set boundaries</button>
+                <button class="answer-button" data-correct="false">Work nonstop</button>
+                <button class="answer-button" data-correct="false">Take on every task</button>
+            </section>
+
+            <!-- Completion Message -->
+            <div id="completion-message" style="display: none;">
+                <h2>🎉 Lesson Complete!</h2>
+                <p>Congratulations! You've completed Time Management for Leaders. Use these strategies to lead effectively while maintaining balance.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="progress-section">
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+        <p id="progress-text">Progress: 0%</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023-2026 VRE & VRE Labs. All rights reserved.</p>
+        <p>Made for VRE with Love by VRE Labs.</p>
+    </footer>
+
+    <script src="../../scripts.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".lesson-section");
+            const progressBar = document.querySelector(".progress-bar");
+            const progressText = document.querySelector("#progress-text");
+            const completionMessage = document.querySelector("#completion-message");
+            let progress = 0;
+            let currentSectionIndex = 0;
+
+            function updateProgress(increment) {
+                progress = Math.min(progress + increment, 100);
+                progressBar.style.width = `${progress}%`;
+                progressText.textContent = `Progress: ${progress}%`;
+            }
+
+            function showNextSection() {
+                if (currentSectionIndex < sections.length - 1) {
+                    sections[currentSectionIndex].style.display = "none";
+                    currentSectionIndex++;
+                    sections[currentSectionIndex].style.display = "block";
+                } else {
+                    sections[currentSectionIndex].style.display = "none";
+                    completionMessage.style.display = "block";
+                }
+            }
+
+            document.querySelectorAll(".answer-button").forEach(button => {
+                button.addEventListener("click", () => {
+                    if (button.dataset.correct === "true") {
+                        updateProgress(33);
+                        showNextSection();
+                    } else {
+                        alert("Incorrect answer. Try again.");
+                    }
+                });
+            });
+
+            sections[currentSectionIndex].style.display = "block";
+        });
+    </script>
+</body>
+</html>
