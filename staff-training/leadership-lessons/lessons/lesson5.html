@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Event Roles & Sub-Roles</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        /* VRE-specific styles for lesson5 */
+        .lesson-header {
+            background: linear-gradient(135deg, #8A2BE2, #00FFFF);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .lesson-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .lesson-header p {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .lesson-body {
+            background: rgba(0, 0, 0, 0.8);
+            color: #FFFFFF;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            line-height: 1.8;
+        }
+
+        .lesson-section {
+            margin-bottom: 2rem;
+        }
+
+        .lesson-section h2 {
+            color: #00FFFF;
+            border-bottom: 2px solid #8A2BE2;
+            padding-bottom: 0.5rem;
+        }
+
+        .styled-list li {
+            margin-bottom: 1rem;
+        }
+
+        .answer-button {
+            background: #8A2BE2;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .answer-button:hover {
+            background: #00FFFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-header">
+        <h1 class="highlighted-title">🌟 Understanding Event Roles & Sub-Roles</h1>
+        <p class="lesson-subtitle">“Every role matters. Every role leads.”</p>
+    </div>
+
+    <div class="lesson-body">
+        <div id="lesson-sections">
+            <!-- Section 1 -->
+            <section id="section-1" class="lesson-section">
+                <h2 class="section-title">🧠 Section 1: Overview</h2>
+                <p>Event roles are temporary assignments based on staff strengths, availability, and comfort level. Rotating these roles ensures fairness, prevents burnout, and helps staff develop new skills.</p>
+                <p><strong>Key Points:</strong></p>
+                <ul class="styled-list">
+                    <li>Roles are not tied to permanent ranks.</li>
+                    <li>Rotation builds leadership depth and prevents role hoarding.</li>
+                    <li>Support roles are just as vital as hosting roles.</li>
+                </ul>
+                <p><strong>Question:</strong> Why are event roles rotated?</p>
+                <button class="answer-button" data-correct="true">To ensure fairness and prevent burnout</button>
+                <button class="answer-button" data-correct="false">To assign permanent ranks</button>
+                <button class="answer-button" data-correct="false">To avoid assigning roles</button>
+            </section>
+
+            <!-- Section 2 -->
+            <section id="section-2" class="lesson-section" style="display: none;">
+                <h2 class="section-title">⚙️ Section 2: Event Role Categories</h2>
+                <p>Each event role has specific duties and ideal candidates:</p>
+                <ul class="styled-list">
+                    <li><strong>Lead Host:</strong> Drives the event, introduces segments, and makes judgment calls.</li>
+                    <li><strong>Backup Host:</strong> Supports the Lead Host and steps in if needed.</li>
+                    <li><strong>Bouncer / Buffer:</strong> Protects the space and maintains peace.</li>
+                    <li><strong>Floaters / Interceptors:</strong> Monitors smaller groups and encourages inclusion.</li>
+                    <li><strong>Reserve / Backup Moderators:</strong> On-call reinforcement for escalations.</li>
+                </ul>
+                <p><strong>Question:</strong> What is the primary duty of a Lead Host?</p>
+                <button class="answer-button" data-correct="true">Drive the event and make judgment calls</button>
+                <button class="answer-button" data-correct="false">Monitor from behind the scenes</button>
+                <button class="answer-button" data-correct="false">Control entry into the instance</button>
+            </section>
+
+            <!-- Section 3 -->
+            <section id="section-3" class="lesson-section" style="display: none;">
+                <h2 class="section-title">🌀 Section 3: Rotation Strategy</h2>
+                <p>Rotating roles ensures fairness and builds cross-role competency. Here’s how:</p>
+                <ul class="styled-list">
+                    <li>Use a tracker to log who has served in each role.</li>
+                    <li>Limit streaks to prevent role hoarding.</li>
+                    <li>Check in with staff to confirm comfort levels before assigning roles.</li>
+                </ul>
+                <p><strong>Question:</strong> What is a key goal of role rotation?</p>
+                <button class="answer-button" data-correct="true">Prevent role hoarding</button>
+                <button class="answer-button" data-correct="false">Assign permanent roles</button>
+                <button class="answer-button" data-correct="false">Avoid leadership development</button>
+            </section>
+
+            <!-- Completion Message -->
+            <div id="completion-message" style="display: none;">
+                <h2>🎉 Lesson Complete!</h2>
+                <p>Congratulations! You've completed Understanding Event Roles & Sub-Roles. Apply these strategies to create balanced and effective event teams.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="progress-section">
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+        <p id="progress-text">Progress: 0%</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023-2026 VRE & VRE Labs. All rights reserved.</p>
+        <p>Made for VRE with Love by VRE Labs.</p>
+    </footer>
+
+    <script src="../../scripts.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".lesson-section");
+            const progressBar = document.querySelector(".progress-bar");
+            const progressText = document.querySelector("#progress-text");
+            const completionMessage = document.querySelector("#completion-message");
+            let progress = 0;
+            let currentSectionIndex = 0;
+
+            function updateProgress(increment) {
+                progress = Math.min(progress + increment, 100);
+                progressBar.style.width = `${progress}%`;
+                progressText.textContent = `Progress: ${progress}%`;
+            }
+
+            function showNextSection() {
+                if (currentSectionIndex < sections.length - 1) {
+                    sections[currentSectionIndex].style.display = "none";
+                    currentSectionIndex++;
+                    sections[currentSectionIndex].style.display = "block";
+                } else {
+                    sections[currentSectionIndex].style.display = "none";
+                    completionMessage.style.display = "block";
+                }
+            }
+
+            document.querySelectorAll(".answer-button").forEach(button => {
+                button.addEventListener("click", () => {
+                    if (button.dataset.correct === "true") {
+                        updateProgress(33);
+                        showNextSection();
+                    } else {
+                        alert("Incorrect answer. Try again.");
+                    }
+                });
+            });
+
+            sections[currentSectionIndex].style.display = "block";
+        });
+    </script>
+</body>
+</html>
