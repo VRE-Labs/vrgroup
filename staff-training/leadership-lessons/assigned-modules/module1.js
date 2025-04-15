@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Ensure the script only runs on module1.html
+    if (!window.location.pathname.endsWith("module1.html")) return;
+
     const sections = document.querySelectorAll(".module-section");
     const progressBar = document.querySelector(".progress-bar");
     const progressText = document.querySelector("#progress-text");
