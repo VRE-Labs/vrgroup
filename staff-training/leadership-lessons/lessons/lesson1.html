@@ -5,6 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leadership Basics 101</title>
     <link rel="stylesheet" href="../../styles.css">
+    <style>
+        /* VRE-specific styles for lesson1 */
+        .lesson-header {
+            background: linear-gradient(135deg, #8A2BE2, #00FFFF); /* VRE branding colors */
+            color: #FFFFFF;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .lesson-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .lesson-header p {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .lesson-body {
+            background: rgba(0, 0, 0, 0.8); /* Dark background for focus */
+            color: #FFFFFF;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            line-height: 1.8;
+        }
+
+        .lesson-section {
+            margin-bottom: 2rem;
+        }
+
+        .lesson-section h2 {
+            color: #00FFFF; /* Neon Blue for section titles */
+            border-bottom: 2px solid #8A2BE2; /* Neon Purple underline */
+            padding-bottom: 0.5rem;
+        }
+
+        .styled-list li {
+            color: #FFFFFF;
+        }
+
+        .answer-button {
+            background: #8A2BE2; /* Neon Purple */
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .answer-button:hover {
+            background: #00FFFF; /* Neon Blue on hover */
+        }
+
+        .progress-section {
+            background: rgba(0, 0, 0, 0.9); /* Dark background for progress bar */
+            color: #FFFFFF;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #8A2BE2, #00FFFF); /* VRE branding gradient */
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.9); /* Dark footer */
+            color: #FFFFFF;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer .social-links a {
+            color: #00FFFF; /* Neon Blue links */
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        footer .social-links a:hover {
+            color: #8A2BE2; /* Neon Purple on hover */
+        }
+    </style>
 </head>
 <body>
     <div class="lesson-header">
@@ -77,6 +172,15 @@
         </div>
         <p id="progress-text">Progress: 0%</p>
     </div>
+
+    <footer>
+        <p>&copy; 2023-2026 VRE & VRE Labs. All rights reserved.</p>
+        <p>Made for VRE with Love by VRE Labs.</p>
+        <ul class="social-links">
+            <li><a href="https://x.com/VRE_Group" target="_blank">Twitter</a></li>
+            <li><a href="https://bsky.app/profile/vrentertainment.bsky.social" target="_blank">Bluesky</a></li>
+        </ul>
+    </footer>
 
     <script src="../../scripts.js"></script>
     <script>
