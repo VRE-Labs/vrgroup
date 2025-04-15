@@ -123,7 +123,10 @@ body {
     border-radius: 5px;
     text-decoration: none;
     font-size: 1rem;
+    cursor: pointer;
     transition: background 0.3s ease;
+    display: inline-block; /* Ensure buttons align properly */
+    text-align: center;
 }
 
 .cta-button:hover {
