@@ -712,3 +712,109 @@ body, .lesson-body, .platform-list, .footer-content {
     transform: scale(1.05);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
+
+/* Cyberpunk Theme */
+body.cyberpunk-theme {
+    background: radial-gradient(circle, #1a1a2e, #16213e, #0f3460); /* Dark cyberpunk gradient */
+    color: #00FFFF; /* Neon Blue text */
+    font-family: 'Orbitron', sans-serif; /* Sci-fi font */
+}
+
+.cyberpunk-hero {
+    background: linear-gradient(135deg, #8A2BE2, #00FFFF);
+    border: 3px solid #FF7EB3;
+    box-shadow: 0 0 30px #FF7EB3;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+}
+
+.cyberpunk-subtitle {
+    color: #FF7EB3;
+    font-style: italic;
+    text-shadow: 0 0 10px #FF7EB3;
+}
+
+.cyberpunk-body {
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid #8A2BE2;
+    box-shadow: 0 0 20px #8A2BE2;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.cyberpunk-title {
+    color: #FF7EB3;
+    text-shadow: 0 0 15px #FF7EB3;
+    font-size: 2.5rem;
+}
+
+.cyberpunk-list li {
+    color: #00FFFF;
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px #00FFFF;
+}
+
+.cyberpunk-subheading {
+    color: #FF7EB3;
+    font-size: 1.8rem;
+    text-shadow: 0 0 10px #FF7EB3;
+}
+
+.cyberpunk-footer {
+    background: rgba(0, 0, 0, 0.9);
+    border-top: 3px solid #8A2BE2;
+    box-shadow: 0 0 20px #8A2BE2;
+    padding: 2rem;
+    border-radius: 15px;
+    color: #FFFFFF;
+}
+
+/* Star Wars-inspired glowing panels */
+.star-wars-panel {
+    border: 3px solid #FFD700; /* Gold glow */
+    box-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700;
+    padding: 2rem;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* Star Wars-inspired header */
+.star-wars-header {
+    border-bottom: 5px solid #FFD700;
+    text-align: center;
+    position: relative;
+}
+
+.star-wars-header .holographic-effect {
+    font-size: 1.2rem;
+    color: #00FFFF;
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+    animation: flicker 2s infinite alternate;
+}
+
+/* Holographic footer effect */
+.star-wars-footer .holographic-effect {
+    font-size: 1rem;
+    color: #FFD700;
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+    animation: flicker 3s infinite alternate;
+}
+
+/* Flicker animation */
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Sci-fi icons */
+.styled-list li i {
+    margin-right: 10px;
+    color: #FFD700; /* Gold for Star Wars icons */
+}
