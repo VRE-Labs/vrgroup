@@ -989,3 +989,69 @@ body.cyberpunk-theme::after {
     text-shadow: 0 0 10px #FFD700, 0 0 20px #FF7EB3;
     animation: flicker 3s infinite alternate;
 }
+
+/* Appeal, Event Host, and Moderator Forms */
+.container {
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 20px #FFD700, 0 0 40px #FF7EB3;
+    padding: 2rem;
+    max-width: 500px;
+    margin: 2rem auto;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+.cyberpunk-input {
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #8A2BE2;
+    background: rgba(0, 0, 0, 0.8);
+    color: #FFFFFF;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cyberpunk-input:focus {
+    border-color: #00FFFF;
+    box-shadow: 0 0 10px #00FFFF;
+    outline: none;
+}
+
+textarea.cyberpunk-input {
+    resize: none;
+    height: 100px;
+}
+
+.cta-button {
+    background: linear-gradient(90deg, #8A2BE2, #00FFFF, #FF7EB3, #FFD700);
+    background-size: 400%;
+    animation: gradient-shift 5s infinite;
+    color: #FFFFFF;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #FFD700, 0 0 30px #FF7EB3;
+}
+
+.hidden {
+    display: none;
+}
+
+.holographic-effect {
+    font-size: 1.2rem;
+    color: #FFD700;
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FF7EB3;
+    animation: flicker 3s infinite alternate;
+}
