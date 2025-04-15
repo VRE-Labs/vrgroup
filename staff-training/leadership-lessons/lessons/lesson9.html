@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Performance Improvement Plans (PPIP)</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        /* VRE-specific styles for lesson9 */
+        .lesson-header {
+            background: linear-gradient(135deg, #8A2BE2, #00FFFF);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .lesson-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .lesson-header p {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .lesson-body {
+            background: rgba(0, 0, 0, 0.8);
+            color: #FFFFFF;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            line-height: 1.8;
+        }
+
+        .lesson-section {
+            margin-bottom: 2rem;
+        }
+
+        .lesson-section h2 {
+            color: #00FFFF;
+            border-bottom: 2px solid #8A2BE2;
+            padding-bottom: 0.5rem;
+        }
+
+        .styled-list li {
+            margin-bottom: 1rem;
+        }
+
+        .answer-button {
+            background: #8A2BE2;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .answer-button:hover {
+            background: #00FFFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-header">
+        <h1 class="highlighted-title">🌟 Progress Performance Improvement Plans (PPIP)</h1>
+        <p class="lesson-subtitle">“Enhancing staff performance and event quality through structured improvement plans.”</p>
+    </div>
+
+    <div class="lesson-body">
+        <div id="lesson-sections">
+            <!-- Section 1 -->
+            <section id="section-1" class="lesson-section">
+                <h2 class="section-title">🧠 Section 1: Introduction to PPIP</h2>
+                <p>The Progress Performance Improvement Plan (PPIP) is a structured tool designed to enhance staff performance and event quality. It focuses on identifying gaps, offering actionable feedback, and setting measurable goals for improvement.</p>
+                <p><strong>Key Initiative Changes:</strong></p>
+                <ul class="styled-list">
+                    <li>✅ PPIP Implementation – Address issues in event execution, staff performance, or community feedback.</li>
+                    <li>✅ Structured Approach – Create clear objectives, action steps, and support mechanisms.</li>
+                    <li>✅ Ongoing Support – Provide continuous improvement opportunities.</li>
+                </ul>
+                <p><strong>Question:</strong> What is the primary goal of a PPIP?</p>
+                <button class="answer-button" data-correct="true">To enhance staff performance and event quality</button>
+                <button class="answer-button" data-correct="false">To issue punitive measures</button>
+                <button class="answer-button" data-correct="false">To avoid addressing issues</button>
+            </section>
+
+            <!-- Section 2 -->
+            <section id="section-2" class="lesson-section" style="display: none;">
+                <h2 class="section-title">⚙️ Section 2: PPIP Development Process</h2>
+                <p>When a PPIP is needed, follow these steps:</p>
+                <ul class="styled-list">
+                    <li><strong>Identify the Issue:</strong> Gather feedback and define specific areas needing improvement.</li>
+                    <li><strong>Develop an Improvement Plan:</strong> Set SMART goals and outline steps to achieve them.</li>
+                    <li><strong>Provide Support and Training:</strong> Offer workshops, mentorship, and resources.</li>
+                    <li><strong>Monitor Progress:</strong> Regularly check progress and adjust the plan as needed.</li>
+                    <li><strong>Final Evaluation:</strong> Assess whether goals were met and determine next steps.</li>
+                </ul>
+                <p><strong>Question:</strong> What is the first step in the PPIP process?</p>
+                <button class="answer-button" data-correct="true">Identify the issue</button>
+                <button class="answer-button" data-correct="false">Provide training</button>
+                <button class="answer-button" data-correct="false">Evaluate progress</button>
+            </section>
+
+            <!-- Section 3 -->
+            <section id="section-3" class="lesson-section" style="display: none;">
+                <h2 class="section-title">🌀 Section 3: Benefits of PPIP</h2>
+                <p>PPIPs offer several benefits for staff and events:</p>
+                <ul class="styled-list">
+                    <li>✅ Improves Event Quality – Ensures engaging and well-organized events.</li>
+                    <li>✅ Encourages Professional Growth – Helps staff improve skills in key areas.</li>
+                    <li>✅ Builds a Stronger Community – Demonstrates commitment to improvement.</li>
+                    <li>✅ Reduces Repetitive Mistakes – Tracks progress to minimize recurring issues.</li>
+                </ul>
+                <p><strong>Question:</strong> How does a PPIP benefit the community?</p>
+                <button class="answer-button" data-correct="true">By building a stronger, more responsive community</button>
+                <button class="answer-button" data-correct="false">By avoiding feedback</button>
+                <button class="answer-button" data-correct="false">By focusing solely on punitive measures</button>
+            </section>
+
+            <!-- Completion Message -->
+            <div id="completion-message" style="display: none;">
+                <h2>🎉 Lesson Complete!</h2>
+                <p>Congratulations! You've completed the Progress Performance Improvement Plans (PPIP) lesson. Use this framework to enhance staff performance and event quality effectively.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="progress-section">
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+        <p id="progress-text">Progress: 0%</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023-2026 VRE & VRE Labs. All rights reserved.</p>
+        <p>Made for VRE with Love by VRE Labs.</p>
+    </footer>
+
+    <script src="../../scripts.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".lesson-section");
+            const progressBar = document.querySelector(".progress-bar");
+            const progressText = document.querySelector("#progress-text");
+            const completionMessage = document.querySelector("#completion-message");
+            let progress = 0;
+            let currentSectionIndex = 0;
+
+            function updateProgress(increment) {
+                progress = Math.min(progress + increment, 100);
+                progressBar.style.width = `${progress}%`;
+                progressText.textContent = `Progress: ${progress}%`;
+            }
+
+            function showNextSection() {
+                if (currentSectionIndex < sections.length - 1) {
+                    sections[currentSectionIndex].style.display = "none";
+                    currentSectionIndex++;
+                    sections[currentSectionIndex].style.display = "block";
+                } else {
+                    sections[currentSectionIndex].style.display = "none";
+                    completionMessage.style.display = "block";
+                }
+            }
+
+            document.querySelectorAll(".answer-button").forEach(button => {
+                button.addEventListener("click", () => {
+                    if (button.dataset.correct === "true") {
+                        updateProgress(33);
+                        showNextSection();
+                    } else {
+                        alert("Incorrect answer. Try again.");
+                    }
+                });
+            });
+
+            sections[currentSectionIndex].style.display = "block";
+        });
+    </script>
+</body>
+</html>
