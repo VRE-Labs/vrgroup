@@ -74,6 +74,27 @@ body {
     color: #00FFFF;
 }
 
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-buttons button {
+    background: #8A2BE2; /* Neon Purple */
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.nav-buttons button:hover {
+    background: #00FFFF; /* Neon Blue on hover */
+}
+
 /* Hero Section */
 .hero {
     background: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */

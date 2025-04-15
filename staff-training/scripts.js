@@ -36,6 +36,33 @@ async function checkPassword() {
     }
 }
 
+async function fetchLeadershipPassword() {
+    try {
+        const response = await fetch('leadership-password.json'); // Fetch leadership password from an external file
+        if (!response.ok) throw new Error('Failed to fetch leadership password');
+        const data = await response.json();
+        return data.password;
+    } catch (error) {
+        console.error('Error fetching leadership password:', error);
+        return null;
+    }
+}
+
+async function checkLeadershipPassword() {
+    const userPassword = prompt('Enter Leadership Lessons Password:');
+    const storedPassword = await fetchLeadershipPassword();
+
+    if (storedPassword && userPassword === storedPassword) {
+        window.location.href = 'leadership-lessons/index.html';
+    } else {
+        alert('Incorrect password. Access denied.');
+    }
+}
+
+function navigateTo(url) {
+    window.location.href = url;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const ttsButton = document.getElementById('tts-button');
     if (ttsButton) {
