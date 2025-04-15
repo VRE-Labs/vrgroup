@@ -1055,3 +1055,50 @@ textarea.cyberpunk-input {
     text-shadow: 0 0 10px #FFD700, 0 0 20px #FF7EB3;
     animation: flicker 3s infinite alternate;
 }
+
+/* Form Styling for Appeal, Event Host, and Moderator Applications */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; /* Add consistent spacing between form elements */
+    width: 100%;
+}
+
+label {
+    font-size: 1.2rem;
+    color: #FF7EB3;
+    text-shadow: 0 0 5px #FF7EB3;
+    text-align: left;
+    width: 100%; /* Ensure labels span the full width */
+    max-width: 400px; /* Limit the width for better alignment */
+}
+
+.cyberpunk-input {
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #8A2BE2;
+    background: rgba(0, 0, 0, 0.8);
+    color: #FFFFFF;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Ensure inputs span the full width */
+    max-width: 400px; /* Limit the width for better alignment */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+textarea.cyberpunk-input {
+    resize: none;
+    height: 120px; /* Slightly taller for better usability */
+}
+
+button.cta-button {
+    width: 100%; /* Ensure buttons span the full width */
+    max-width: 400px; /* Limit the width for better alignment */
+    padding: 12px 20px;
+    font-size: 1.1rem; /* Slightly larger font for better readability */
+}
+
+form > * {
+    margin: 0 auto; /* Center all form elements */
+}
