@@ -150,7 +150,7 @@
         <h1 class="highlighted-title">VRE Punishment Appeals</h1>
         <p class="cyberpunk-subtitle">Submit your appeal below. You may only submit one appeal.</p>
         <form id="appealForm">
-            <label for="punishment">Type of Punishment:</label>
+            <label for="punishment" class="cyberpunk-subheading">Type of Punishment:</label>
             <select id="punishment" required>
                 <option value="warn">Warning</option>
                 <option value="mute">Mute</option>
@@ -158,19 +158,19 @@
                 <option value="ban">Ban</option>
             </select>
             
-            <label for="member" id="memberLabel">Select Member:</label>
+            <label for="member" id="memberLabel" class="cyberpunk-subheading">Select Member:</label>
             <select id="member" required>
                 <option value="">Loading member list...</option>
             </select>
             
-            <label for="reason">Why should this be appealed?</label>
+            <label for="reason" class="cyberpunk-subheading">Why should this be appealed?</label>
             <textarea id="reason" required placeholder="Explain your reasons here..."></textarea>
             
-            <button type="submit">Submit Appeal</button>
+            <button type="submit" class="cta-button">Submit Appeal</button>
         </form>
 
         <p id="submittedMessage" class="hidden holographic-effect">Your appeal has been submitted successfully.</p>
-        <button id="resetButton" class="hidden" onclick="resetForm()">Reset Appeal Submission</button>
+        <button id="resetButton" class="hidden cta-button" onclick="resetForm()">Reset Appeal Submission</button>
     </div>
 
     <script>
