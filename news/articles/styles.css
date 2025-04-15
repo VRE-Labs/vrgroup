@@ -84,6 +84,26 @@ body {
     margin: 1.5rem 0; /* Add spacing around the buttons */
 }
 
+.nav-buttons .button {
+    background: linear-gradient(90deg, #8A2BE2, #00FFFF, #FF7EB3, #FFD700); /* Animated gradient */
+    background-size: 400%;
+    animation: gradient-shift 5s infinite; /* Use the same animation as cta-button */
+    color: #FFFFFF;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.nav-buttons .button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #FFD700, 0 0 30px #FF7EB3; /* Same hover effect as cta-button */
+}
+
 /* Hero Section */
 .hero {
     background: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
@@ -219,18 +239,18 @@ body {
 
 .lesson-header {
     text-align: center;
-    padding: 2rem;
+    padding: 1rem; /* Further reduced padding */
     background: linear-gradient(to right, #ff7eb3, #ff758c);
     color: #fff;
     border-radius: 10px;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem; /* Further reduced margin */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Slightly smaller shadow */
 }
 
 .lesson-header h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
+    font-size: 2.2rem; /* Further reduced font size */
+    margin-bottom: 0.2rem; /* Further reduced margin */
+    font-weight: 500; /* Slightly lighter font weight */
 }
 
 .lesson-header .lesson-subtitle {
