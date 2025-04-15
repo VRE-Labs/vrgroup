@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership Communication Skills 101</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        /* VRE-specific styles for lesson2 */
+        .lesson-header {
+            background: linear-gradient(135deg, #8A2BE2, #00FFFF); /* VRE branding colors */
+            color: #FFFFFF;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .lesson-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .lesson-header p {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .lesson-body {
+            background: rgba(0, 0, 0, 0.8); /* Dark background for focus */
+            color: #FFFFFF;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            line-height: 1.8;
+        }
+
+        .lesson-section {
+            margin-bottom: 2rem;
+        }
+
+        .lesson-section h2 {
+            color: #00FFFF; /* Neon Blue for section titles */
+            border-bottom: 2px solid #8A2BE2; /* Neon Purple underline */
+            padding-bottom: 0.5rem;
+        }
+
+        .styled-list li {
+            color: #FFFFFF;
+        }
+
+        .answer-button {
+            background: #8A2BE2; /* Neon Purple */
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .answer-button:hover {
+            background: #00FFFF; /* Neon Blue on hover */
+        }
+
+        .progress-section {
+            background: rgba(0, 0, 0, 0.9); /* Dark background for progress bar */
+            color: #FFFFFF;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #8A2BE2, #00FFFF); /* VRE branding gradient */
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.9); /* Dark footer */
+            color: #FFFFFF;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer .social-links a {
+            color: #00FFFF; /* Neon Blue links */
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        footer .social-links a:hover {
+            color: #8A2BE2; /* Neon Purple on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-header">
+        <h1 class="highlighted-title">🌟 Leadership Communication Skills 101</h1>
+        <p class="lesson-subtitle">“The art of communication is the language of leadership.”</p>
+    </div>
+
+    <div class="lesson-body">
+        <!-- Section Container -->
+        <div id="lesson-sections">
+            <!-- Section 1 -->
+            <section id="section-1" class="lesson-section">
+                <h2 class="section-title">🧠 Section 1: The Importance of Communication</h2>
+                <p>Communication is the foundation of effective leadership. It ensures clarity, builds trust, and fosters collaboration.</p>
+                <p><strong>Key Points:</strong></p>
+                <ul class="styled-list">
+                    <li>Clear communication prevents misunderstandings and aligns team goals.</li>
+                    <li>Active listening is as important as speaking.</li>
+                    <li>Non-verbal cues, such as body language, play a significant role in communication.</li>
+                </ul>
+                <p><strong>Question:</strong> What is the foundation of effective leadership?</p>
+                <button class="answer-button" data-correct="false">Authority</button>
+                <button class="answer-button" data-correct="true">Communication</button>
+                <button class="answer-button" data-correct="false">Perfection</button>
+            </section>
+
+            <!-- Section 2 -->
+            <section id="section-2" class="lesson-section" style="display: none;">
+                <h2 class="section-title">⚙️ Section 2: Active Listening</h2>
+                <p>Active listening is a critical skill for leaders. It involves fully focusing on the speaker, understanding their message, and responding thoughtfully.</p>
+                <p><strong>Key Practices:</strong></p>
+                <ul class="styled-list">
+                    <li>Maintain eye contact and show genuine interest.</li>
+                    <li>Avoid interrupting and let the speaker finish.</li>
+                    <li>Summarize what you heard to confirm understanding.</li>
+                </ul>
+                <p><strong>Question:</strong> What is a key practice of active listening?</p>
+                <button class="answer-button" data-correct="true">Maintain eye contact</button>
+                <button class="answer-button" data-correct="false">Interrupt frequently</button>
+                <button class="answer-button" data-correct="false">Ignore non-verbal cues</button>
+            </section>
+
+            <!-- Section 3 -->
+            <section id="section-3" class="lesson-section" style="display: none;">
+                <h2 class="section-title">🗣️ Section 3: Delivering Feedback</h2>
+                <p>Providing constructive feedback is essential for team growth and improvement. Effective feedback is specific, actionable, and delivered with empathy.</p>
+                <p><strong>Key Tips:</strong></p>
+                <ul class="styled-list">
+                    <li>Focus on the behavior, not the person.</li>
+                    <li>Be specific about what needs improvement and why.</li>
+                    <li>Offer suggestions for improvement and encourage dialogue.</li>
+                </ul>
+                <p><strong>Question:</strong> What is the best way to deliver feedback?</p>
+                <button class="answer-button" data-correct="true">Focus on the behavior, not the person</button>
+                <button class="answer-button" data-correct="false">Criticize the individual</button>
+                <button class="answer-button" data-correct="false">Be vague about the issue</button>
+            </section>
+
+            <!-- Completion Message -->
+            <div id="completion-message" style="display: none;">
+                <h2>🎉 Lesson Complete!</h2>
+                <p>Congratulations! You've completed Leadership Communication Skills 101. Apply these skills to enhance your leadership effectiveness.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Bar Section -->
+    <div class="progress-section">
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+        <p id="progress-text">Progress: 0%</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023-2026 VRE & VRE Labs. All rights reserved.</p>
+        <p>Made for VRE with Love by VRE Labs.</p>
+        <ul class="social-links">
+            <li><a href="https://x.com/VRE_Group" target="_blank">Twitter</a></li>
+            <li><a href="https://bsky.app/profile/vrentertainment.bsky.social" target="_blank">Bluesky</a></li>
+        </ul>
+    </footer>
+
+    <script src="../../scripts.js"></script>
+    <script>
+        // Lesson-specific script
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".lesson-section");
+            const progressBar = document.querySelector(".progress-bar");
+            const progressText = document.querySelector("#progress-text");
+            const completionMessage = document.querySelector("#completion-message");
+            let progress = 0;
+            let currentSectionIndex = 0;
+
+            // Update progress bar
+            function updateProgress(increment) {
+                progress = Math.min(progress + increment, 100);
+                progressBar.style.width = `${progress}%`;
+                progressText.textContent = `Progress: ${progress}%`;
+            }
+
+            // Show the next section
+            function showNextSection() {
+                if (currentSectionIndex < sections.length - 1) {
+                    sections[currentSectionIndex].style.display = "none";
+                    currentSectionIndex++;
+                    sections[currentSectionIndex].style.display = "block";
+                } else {
+                    sections[currentSectionIndex].style.display = "none";
+                    completionMessage.style.display = "block";
+                }
+            }
+
+            // Handle answer button clicks
+            document.querySelectorAll(".answer-button").forEach(button => {
+                button.addEventListener("click", () => {
+                    if (button.dataset.correct === "true") {
+                        updateProgress(33); // Increment progress by 33% per correct section
+                        showNextSection();
+                    } else {
+                        alert("Incorrect answer. Try again.");
+                    }
+                });
+            });
+
+            // Initialize the first section
+            sections[currentSectionIndex].style.display = "block";
+        });
+    </script>
+</body>
+</html>
