@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership Basics 101</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <div class="lesson-header">
+        <h1 class="highlighted-title">🌟 Leadership Basics 101</h1>
+        <p class="lesson-subtitle">“Leadership is not about titles, positions, or flowcharts. It is about one life influencing another.”</p>
+    </div>
+
+    <div class="lesson-body">
+        <!-- Section Container -->
+        <div id="lesson-sections">
+            <!-- Section 1 -->
+            <section id="section-1" class="lesson-section">
+                <h2 class="section-title">🧠 Section 1: What is Leadership?</h2>
+                <p>Leadership is the ability to inspire and guide individuals or teams toward achieving a common goal. It’s about influence, not authority.</p>
+                <p><strong>Key Points:</strong></p>
+                <ul class="styled-list">
+                    <li>Leadership is about setting a vision and motivating others to follow it.</li>
+                    <li>It requires empathy, communication, and adaptability.</li>
+                    <li>Good leaders lead by example and foster trust within their teams.</li>
+                </ul>
+                <p><strong>Question:</strong> What is the most important aspect of leadership?</p>
+                <button class="answer-button" data-correct="false">Authority</button>
+                <button class="answer-button" data-correct="true">Influence</button>
+                <button class="answer-button" data-correct="false">Perfection</button>
+            </section>
+
+            <!-- Section 2 -->
+            <section id="section-2" class="lesson-section" style="display: none;">
+                <h2 class="section-title">⚙️ Section 2: Core Leadership Traits</h2>
+                <p>Effective leaders share common traits that help them succeed in guiding their teams.</p>
+                <p><strong>Key Traits:</strong></p>
+                <ul class="styled-list">
+                    <li><strong>Empathy:</strong> Understanding and addressing the needs of your team.</li>
+                    <li><strong>Communication:</strong> Clearly articulating goals, expectations, and feedback.</li>
+                    <li><strong>Adaptability:</strong> Adjusting to challenges and changes with resilience.</li>
+                </ul>
+                <p><strong>Question:</strong> Which of the following is a core leadership trait?</p>
+                <button class="answer-button" data-correct="true">Empathy</button>
+                <button class="answer-button" data-correct="false">Perfectionism</button>
+                <button class="answer-button" data-correct="false">Micromanagement</button>
+            </section>
+
+            <!-- Section 3 -->
+            <section id="section-3" class="lesson-section" style="display: none;">
+                <h2 class="section-title">🗣️ Section 3: Leadership in Action</h2>
+                <p>Leadership is demonstrated through actions, not just words. Here are some practical ways to lead effectively:</p>
+                <ul class="styled-list">
+                    <li>Set clear goals and expectations for your team.</li>
+                    <li>Provide regular feedback and recognize achievements.</li>
+                    <li>Be approachable and open to suggestions or concerns.</li>
+                </ul>
+                <p><strong>Question:</strong> How can a leader build trust within their team?</p>
+                <button class="answer-button" data-correct="true">By being approachable and transparent</button>
+                <button class="answer-button" data-correct="false">By enforcing strict rules</button>
+                <button class="answer-button" data-correct="false">By avoiding feedback</button>
+            </section>
+
+            <!-- Completion Message -->
+            <div id="completion-message" style="display: none;">
+                <h2>🎉 Lesson Complete!</h2>
+                <p>Congratulations! You've completed Leadership Basics 101. Keep practicing these principles to grow as a leader.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Bar Section -->
+    <div class="progress-section">
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+        <p id="progress-text">Progress: 0%</p>
+    </div>
+
+    <script src="../../scripts.js"></script>
+    <script>
+        // Lesson-specific script
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".lesson-section");
+            const progressBar = document.querySelector(".progress-bar");
+            const progressText = document.querySelector("#progress-text");
+            const completionMessage = document.querySelector("#completion-message");
+            let progress = 0;
+            let currentSectionIndex = 0;
+
+            // Update progress bar
+            function updateProgress(increment) {
+                progress = Math.min(progress + increment, 100);
+                progressBar.style.width = `${progress}%`;
+                progressText.textContent = `Progress: ${progress}%`;
+            }
+
+            // Show the next section
+            function showNextSection() {
+                if (currentSectionIndex < sections.length - 1) {
+                    sections[currentSectionIndex].style.display = "none";
+                    currentSectionIndex++;
+                    sections[currentSectionIndex].style.display = "block";
+                } else {
+                    sections[currentSectionIndex].style.display = "none";
+                    completionMessage.style.display = "block";
+                }
+            }
+
+            // Handle answer button clicks
+            document.querySelectorAll(".answer-button").forEach(button => {
+                button.addEventListener("click", () => {
+                    if (button.dataset.correct === "true") {
+                        updateProgress(33); // Increment progress by 33% per correct section
+                        showNextSection();
+                    } else {
+                        alert("Incorrect answer. Try again.");
+                    }
+                });
+            });
+
+            // Initialize the first section
+            sections[currentSectionIndex].style.display = "block";
+        });
+    </script>
+</body>
+</html>
