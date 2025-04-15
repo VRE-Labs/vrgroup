@@ -151,7 +151,7 @@
         <p class="cyberpunk-subtitle">Submit your appeal below. You may only submit one appeal.</p>
         <form id="appealForm">
             <label for="punishment" class="cyberpunk-subheading">Type of Punishment:</label>
-            <select id="punishment" required>
+            <select id="punishment" required class="cyberpunk-input">
                 <option value="warn">Warning</option>
                 <option value="mute">Mute</option>
                 <option value="kick">Kick</option>
@@ -159,12 +159,12 @@
             </select>
             
             <label for="member" id="memberLabel" class="cyberpunk-subheading">Select Member:</label>
-            <select id="member" required>
+            <select id="member" required class="cyberpunk-input">
                 <option value="">Loading member list...</option>
             </select>
             
             <label for="reason" class="cyberpunk-subheading">Why should this be appealed?</label>
-            <textarea id="reason" required placeholder="Explain your reasons here..."></textarea>
+            <textarea id="reason" required placeholder="Explain your reasons here..." class="cyberpunk-input"></textarea>
             
             <button type="submit" class="cta-button">Submit Appeal</button>
         </form>
