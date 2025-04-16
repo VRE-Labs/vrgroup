@@ -163,54 +163,36 @@ body {
 
 /* Fix for lesson-card text visibility */
 .lesson-card {
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black for cards */
-    color: #FFFFFF; /* Ensure text is white for visibility */
+    background: rgba(0, 0, 0, 0.85); /* Dark semi-transparent background */
+    color: #FFFFFF; /* White text for contrast */
     padding: 1.5rem;
-    border-radius: 10px;
+    border-radius: 15px;
     text-decoration: none;
-    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    border: 2px solid transparent;
-    display: flex; /* Ensure proper layout */
-    flex-direction: column; /* Stack content vertically */
-    justify-content: space-between; /* Space out content */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    border: 3px solid transparent; /* Transparent border for gradient effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-/* Remove duplicate or conflicting styles */
-.lesson-card h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-    color: #FFFFFF; /* Ensure header text is visible */
-}
-
-.lesson-card p {
-    font-size: 1rem;
-    color: #FFFFFF; /* Ensure paragraph text is visible */
-    margin: 0; /* Remove unnecessary margins */
-}
-
-/* Fix hover effect for lesson cards */
 .lesson-card:hover {
-    transform: scale(1.05);
-    background: rgba(138, 43, 226, 0.9); /* Slightly brighter Neon Purple on hover */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-    border-color: #00FFFF; /* Neon Blue border on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+    border-image: linear-gradient(45deg, #FFD700, #FF7EB3, #8A2BE2, #00FFFF) 1; /* Gradient border */
 }
 
 /* Platform-specific color coding */
 .lesson-card.discord {
-    background-color: #7289da; /* Discord blue */
-    color: #fff;
+    background: linear-gradient(135deg, #7289da, #4a6fa5); /* Discord gradient */
 }
 
 .lesson-card.vrchat {
-    background-color: #ffcc00; /* VRChat yellow */
-    color: #333;
+    background: linear-gradient(135deg, #ffcc00, #ff9900); /* VRChat gradient */
 }
 
 .lesson-card.minecraft {
-    background-color: #34c759; /* Minecraft green */
-    color: #fff;
+    background: linear-gradient(135deg, #34c759, #28a745); /* Minecraft gradient */
 }
 
 /* Importance-based color coding */
@@ -543,20 +525,20 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
     padding: 10px 15px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 1000; /* Ensure it stays on top of other elements */
+    z-index: 1000;
     text-align: center;
-    width: 250px; /* Fixed width for consistent appearance */
+    width: 250px;
 }
 
 .progress-bar-container {
     background: #ccc;
     border-radius: 10px;
     overflow: hidden;
-    height: 10px; /* Smaller height for compact design */
+    height: 10px;
     width: 100%;
     margin: 5px 0;
 }
