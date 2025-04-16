@@ -1024,6 +1024,100 @@ body.cyberpunk-theme::after {
 /* Lesson Section */
 .lesson-section {
     margin-bottom: 2rem;
+    background: linear-gradient(135deg, #1a1a2e, #0f3460); /* Cyberpunk gradient */
+    border: 3px solid #FFD700; /* Star Wars gold glow */
+    box-shadow: 0 0 20px #FFD700, 0 0 40px #FF7EB3; /* Neon glow */
+    padding: 2rem;
+    border-radius: 15px;
+    animation: border-ripple 4s infinite; /* Ripple animation */
+}
+
+/* Lesson Section Title */
+.lesson-section h2 {
+    color: #00FFFF; /* Neon Blue */
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #FF7EB3; /* Sci-Fi glow */
+    border-bottom: 2px solid #8A2BE2; /* Neon Purple border */
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+/* Styled List */
+.styled-list li {
+    margin-bottom: 1rem;
+    color: #FFFFFF; /* White text */
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px #FFD700; /* Star Wars glow */
+}
+
+/* Answer Buttons */
+.answer-button {
+    background: linear-gradient(90deg, #8A2BE2, #00FFFF); /* Cyberpunk gradient */
+    color: #FFFFFF; /* White text */
+    border: 2px solid #FFD700; /* Star Wars gold border */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 5px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px #FFD700, 0 0 20px #FF7EB3; /* Neon glow */
+}
+
+.answer-button:hover {
+    background: linear-gradient(90deg, #FF7EB3, #FFD700); /* Neon Pink to Gold */
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0 0 20px #FFD700, 0 0 30px #FF7EB3; /* Enhanced glow */
+}
+
+/* Completion Message */
+#completion-message {
+    background: linear-gradient(135deg, #8A2BE2, #00FFFF); /* Cyberpunk gradient */
+    color: #FFFFFF; /* White text */
+    border: 3px solid #FFD700; /* Star Wars gold border */
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 20px #FFD700, 0 0 40px #FF7EB3; /* Neon glow */
+    animation: holographic-glow 6s infinite alternate; /* Holographic glow animation */
+}
+
+/* Ripple Animation for Lesson Sections */
+@keyframes border-ripple {
+    0% {
+        border-color: #FFD700; /* Gold */
+        box-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700;
+    }
+    25% {
+        border-color: #FF7EB3; /* Neon Pink */
+        box-shadow: 0 0 20px #FF7EB3, 0 0 40px #FF7EB3;
+    }
+    50% {
+        border-color: #8A2BE2; /* Neon Purple */
+        box-shadow: 0 0 20px #8A2BE2, 0 0 40px #8A2BE2;
+    }
+    75% {
+        border-color: #00FFFF; /* Neon Blue */
+        box-shadow: 0 0 20px #00FFFF, 0 0 40px #00FFFF;
+    }
+    100% {
+        border-color: #FFD700; /* Back to Gold */
+        box-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700;
+    }
+}
+
+/* Holographic Glow Animation */
+@keyframes holographic-glow {
+    0% {
+        box-shadow: 0 0 20px #FFD700, 0 0 40px #FF7EB3;
+    }
+    100% {
+        box-shadow: 0 0 30px #8A2BE2, 0 0 50px #00FFFF;
+    }
+}
+
+/* Lesson Section */
+.lesson-section {
+    margin-bottom: 2rem;
 }
 
 .lesson-section h2 {
