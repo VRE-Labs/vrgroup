@@ -13,6 +13,7 @@
     </header>
 
     <main class="star-wars-panel">
+        <button id="tts-button" class="cta-button">🔊 Read Article</button>
         <section class="article-section">
             <h2 class="section-title">🎮 NVIDIA’s RTX 5000 Series: A Launch or a Letdown?</h2>
             <p>NVIDIA officially launched the RTX 5090 and 5080 GPUs on January 30, 2025, with Founders Editions priced at $1,999 and $999, respectively. Despite this, availability has been scarce, leading to frustration among consumers and board partners.</p>
@@ -48,5 +49,29 @@
         <p class="holographic-effect">&copy; 2025 Tech Pulse. All rights reserved.</p>
         <p class="holographic-effect">Powered by cutting-edge insights and futuristic trends.</p>
     </footer>
+
+    <script>
+        document.getElementById('tts-button').addEventListener('click', () => {
+            const articleSections = document.querySelectorAll('.article-section');
+            const utterance = new SpeechSynthesisUtterance();
+            let articleText = '';
+
+            // Collect text content from article sections
+            articleSections.forEach(section => {
+                const sectionTitle = section.querySelector('.section-title').textContent;
+                const sectionContent = section.querySelectorAll('p, li');
+                articleText += sectionTitle + '. ';
+                sectionContent.forEach(content => {
+                    articleText += content.textContent + ' ';
+                });
+            });
+
+            // Set the text for TTS and start speaking
+            utterance.text = articleText;
+            utterance.rate = 1; // Adjust the rate of speech
+            utterance.pitch = 1; // Adjust the pitch of speech
+            speechSynthesis.speak(utterance);
+        });
+    </script>
 </body>
 </html>
