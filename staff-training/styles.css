@@ -40,15 +40,16 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    text-align: center;
 }
 
 /* Navbar */
 .navbar {
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black for navbar */
-    padding: 1rem 2rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center; /* Center the nav-buttons horizontally */
+    align-items: center; /* Center the nav-buttons vertically */
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black for navbar */
 }
 
 .navbar .logo {
@@ -74,25 +75,33 @@ body {
     color: #00FFFF;
 }
 
-/* Navigation Buttons */
+/* Ensure navigation buttons are perfectly centered */
 .nav-buttons {
     display: flex;
-    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0; /* Add spacing around the buttons */
 }
 
-.nav-buttons button {
-    background: #8A2BE2; /* Neon Purple */
+.nav-buttons .button {
+    background: linear-gradient(90deg, #8A2BE2, #00FFFF, #FF7EB3, #FFD700); /* Animated gradient */
+    background-size: 400%;
+    animation: gradient-shift 5s infinite; /* Use the same animation as cta-button */
     color: #FFFFFF;
+    padding: 0.75rem 1.5rem;
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
+    text-decoration: none;
     font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    text-align: center;
 }
 
-.nav-buttons button:hover {
-    background: #00FFFF; /* Neon Blue on hover */
+.nav-buttons .button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #FFD700, 0 0 30px #FF7EB3; /* Same hover effect as cta-button */
 }
 
 /* Hero Section */
@@ -123,10 +132,7 @@ body {
     border-radius: 5px;
     text-decoration: none;
     font-size: 1rem;
-    cursor: pointer;
     transition: background 0.3s ease;
-    display: inline-block; /* Ensure buttons align properly */
-    text-align: center;
 }
 
 .cta-button:hover {
@@ -233,18 +239,18 @@ body {
 
 .lesson-header {
     text-align: center;
-    padding: 2rem;
+    padding: 1rem; /* Further reduced padding */
     background: linear-gradient(to right, #ff7eb3, #ff758c);
     color: #fff;
     border-radius: 10px;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem; /* Further reduced margin */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Slightly smaller shadow */
 }
 
 .lesson-header h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
+    font-size: 2.2rem; /* Further reduced font size */
+    margin-bottom: 0.2rem; /* Further reduced margin */
+    font-weight: 500; /* Slightly lighter font weight */
 }
 
 .lesson-header .lesson-subtitle {
@@ -259,6 +265,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     line-height: 1.8;
     color: #FFFFFF; /* Ensure text is visible on gradient */
+    text-align: center;
 }
 
 .section-title {
@@ -297,15 +304,10 @@ body {
 
 /* About Section */
 .about {
-    background: rgba(0, 0, 0, 0.9); /* Increase opacity for better contrast */
-    color: #FFFFFF; /* White text for readability */
     padding: 2rem;
-    border-radius: 10px;
+    background-color: #f9f9f9;
     text-align: center;
-    margin: 2rem auto;
-    max-width: 800px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add subtle shadow for depth */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add shadow to text for better visibility */
+    border-top: 5px solid #7289da; /* Discord accent */
 }
 
 .about h2 {
@@ -572,15 +574,418 @@ footer {
     margin-top: 5px;
 }
 
-/* Welcome Section */
-.welcome-section {
-    background: rgba(0, 0, 0, 0.9); /* Increase opacity for better contrast */
-    color: #FFFFFF; /* White text for readability */
-    padding: 2rem;
+/* Platform-specific styling */
+.carousel-item img {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.carousel-item:hover img {
+    transform: scale(1.2);
+    filter: grayscale(0%);
+}
+
+/* Style for hidden hyperlink text in footer */
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #00FFFF; /* Neon Blue */
+    border-radius: 50%;
+    text-decoration: none;
+    position: relative;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a::before {
+    content: attr(aria-label);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+.social-links a:hover {
+    background-color: #8A2BE2; /* Neon Purple on hover */
+    transform: scale(1.1);
+}
+
+/* Shrink header animation */
+.header-animation {
+    width: 100%;
+    max-width: 800px;
+    height: 160px; /* Matches the updated size in index.html */
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Center navigation buttons */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0; /* Add spacing around the buttons */
+}
+
+.button {
+    background: linear-gradient(135deg, #8A2BE2, #00FFFF); /* Neon gradient */
+    color: #FFFFFF;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+
+.button:hover {
+    background: #00FFFF; /* Neon Blue on hover */
+    transform: scale(1.1);
+}
+
+/* Center all text */
+body, .lesson-body, .platform-list, .footer-content {
+    text-align: center;
+}
+
+/* Social links with sleek icons */
+.social-links a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #00FFFF; /* Neon Blue */
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #8A2BE2; /* Neon Purple on hover */
+    transform: scale(1.1);
+}
+
+.social-links i {
+    pointer-events: none; /* Ensure only the link is clickable */
+}
+
+/* Calendar Section */
+.calendar-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.calendar-day {
+    background: linear-gradient(135deg, #8A2BE2, #00FFFF); /* Neon gradient */
+    color: #FFFFFF;
+    padding: 1.5rem;
     border-radius: 10px;
     text-align: center;
-    margin: 2rem auto;
-    max-width: 800px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add subtle shadow for depth */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add shadow to text for better visibility */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calendar-day h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.calendar-day p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    color: #FFFFFF;
+}
+
+.calendar-day:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Cyberpunk Theme */
+body.cyberpunk-theme {
+    background: radial-gradient(circle, #1a1a2e, #16213e, #0f3460); /* Dark cyberpunk gradient */
+    color: #00FFFF; /* Neon Blue text */
+    font-family: 'Orbitron', sans-serif; /* Sci-fi font */
+}
+
+.cyberpunk-hero {
+    background: linear-gradient(135deg, #8A2BE2, #00FFFF);
+    border: 3px solid #FF7EB3;
+    box-shadow: 0 0 30px #FF7EB3;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+}
+
+.cyberpunk-subtitle {
+    color: #FF7EB3;
+    font-style: italic;
+    text-shadow: 0 0 10px #FF7EB3;
+}
+
+.cyberpunk-body {
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid #8A2BE2;
+    box-shadow: 0 0 20px #8A2BE2;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.cyberpunk-title {
+    color: #FF7EB3;
+    text-shadow: 0 0 15px #FF7EB3;
+    font-size: 2.5rem;
+}
+
+.cyberpunk-list li {
+    color: #00FFFF;
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px #00FFFF;
+}
+
+.cyberpunk-subheading {
+    color: #FF7EB3;
+    font-size: 1.8rem;
+    text-shadow: 0 0 10px #FF7EB3;
+}
+
+.cyberpunk-footer {
+    background: rgba(0, 0, 0, 0.9);
+    border-top: 3px solid #8A2BE2;
+    box-shadow: 0 0 20px #8A2BE2;
+    padding: 2rem;
+    border-radius: 15px;
+    color: #FFFFFF;
+}
+
+/* Star Wars-inspired glowing panels */
+.star-wars-panel {
+    border: 3px solid #FFD700; /* Gold glow */
+    box-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700;
+    padding: 2rem;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.9);
+    animation: border-ripple 4s infinite; /* Add ripple animation */
+}
+
+/* Star Wars-inspired header */
+.star-wars-header {
+    border-bottom: 5px solid #FFD700;
+    text-align: center;
+    position: relative;
+    animation: border-ripple 4s infinite; /* Add ripple animation */
+}
+
+.star-wars-header .holographic-effect {
+    font-size: 1.2rem;
+    color: #00FFFF;
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+    animation: flicker 2s infinite alternate;
+}
+
+/* Holographic footer effect */
+.star-wars-footer {
+    background: rgba(0, 0, 0, 0.9);
+    border-top: 3px solid #FFD700; /* Initial Gold glow */
+    animation: border-ripple 4s infinite; /* Add ripple animation */
+}
+
+.star-wars-footer .holographic-effect {
+    font-size: 1rem;
+    color: #FFD700;
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+    animation: flicker 3s infinite alternate;
+}
+
+/* Flicker animation */
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Ripple animation for glowing borders */
+@keyframes border-ripple {
+    0% {
+        border-color: #FFD700; /* Gold */
+        box-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700;
+    }
+    25% {
+        border-color: #FF7EB3; /* Neon Pink */
+        box-shadow: 0 0 20px #FF7EB3, 0 0 40px #FF7EB3;
+    }
+    50% {
+        border-color: #8A2BE2; /* Neon Purple */
+        box-shadow: 0 0 20px #8A2BE2, 0 0 40px #8A2BE2;
+    }
+    75% {
+        border-color: #00FFFF; /* Neon Blue */
+        box-shadow: 0 0 20px #00FFFF, 0 0 40px #00FFFF;
+    }
+    100% {
+        border-color: #FFD700; /* Back to Gold */
+        box-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700;
+    }
+}
+
+/* Sci-fi icons */
+.styled-list li i {
+    margin-right: 10px;
+    color: #FFD700; /* Gold for Star Wars icons */
+}
+
+/* Add particle effect background */
+body.cyberpunk-theme::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.95));
+    z-index: -2;
+}
+
+body.cyberpunk-theme::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://preview.redd.it/e42jpx6a8az51.jpg?width=1080&crop=smart&auto=webp&s=7fbf17dd4472a8fa16a4b0e5f4c5b29591417027') repeat; /* Replace with particle effect image */
+    opacity: 0.2;
+    z-index: -1;
+    animation: particle-move 10s linear infinite;
+}
+
+@keyframes particle-move {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100px, -100px);
+    }
+}
+
+/* Glowing text animation */
+.highlighted-title {
+    color: #FFFFFF;
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FF7EB3, 0 0 30px #8A2BE2, 0 0 40px #00FFFF;
+    font-size: 3rem;
+    animation: glow-pulse 3s infinite alternate;
+}
+
+@keyframes glow-pulse {
+    0% {
+        text-shadow: 0 0 10px #FFD700, 0 0 20px #FF7EB3, 0 0 30px #8A2BE2, 0 0 40px #00FFFF;
+    }
+    100% {
+        text-shadow: 0 0 20px #FFD700, 0 0 30px #FF7EB3, 0 0 40px #8A2BE2, 0 0 50px #00FFFF;
+    }
+}
+
+/* Holographic panel effect */
+.star-wars-panel {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8));
+    border: 3px solid transparent;
+    border-image: linear-gradient(45deg, #FFD700, #FF7EB3, #8A2BE2, #00FFFF) 1;
+    box-shadow: 0 0 20px #FFD700, 0 0 40px #FF7EB3;
+    animation: border-ripple 4s infinite, holographic-glow 6s infinite alternate;
+}
+
+@keyframes holographic-glow {
+    0% {
+        box-shadow: 0 0 20px #FFD700, 0 0 40px #FF7EB3;
+    }
+    100% {
+        box-shadow: 0 0 30px #8A2BE2, 0 0 50px #00FFFF;
+    }
+}
+
+/* Animated gradient for buttons */
+.cta-button {
+    background: linear-gradient(90deg, #8A2BE2, #00FFFF, #FF7EB3, #FFD700);
+    background-size: 400%;
+    animation: gradient-shift 5s infinite;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #FFD700, 0 0 30px #FF7EB3;
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Sci-fi holographic footer */
+.star-wars-footer {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8));
+    border-top: 3px solid transparent;
+    border-image: linear-gradient(45deg, #FFD700, #FF7EB3, #8A2BE2, #00FFFF) 1;
+    animation: border-ripple 4s infinite, holographic-glow 6s infinite alternate;
+    padding: 2rem;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.star-wars-footer .holographic-effect {
+    font-size: 1.2rem;
+    color: #FFD700;
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FF7EB3;
+    animation: flicker 3s infinite alternate;
 }

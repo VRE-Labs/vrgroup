@@ -6,44 +6,42 @@
     <title>VRE Staff Training Hub</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="cyberpunk-theme">
     <div id="password-overlay">
-        <h1>Enter Password</h1>
+        <h1 class="highlighted-title">Enter Password</h1>
         <input type="password" id="password-input" placeholder="Enter password">
-        <button onclick="checkPassword()">Submit</button>
+        <button class="cta-button" onclick="checkPassword()">Submit</button>
         <p id="error-message" class="error-message">Incorrect password. Please try again.</p>
     </div>
     <header>
         <nav class="navbar">
-            <div class="logo">VRE Hub</div>
+            <div class="logo animated-gradient">VRE Hub</div>
             <div class="nav-buttons">
-                <button onclick="navigateTo('lessons/index.html')">Lessons</button>
-                <button onclick="checkLeadershipPassword()">Leadership Lessons</button>
+                <button class="button" onclick="navigateTo('lessons/index.html')">Lessons</button>
+                <button class="button" onclick="checkLeadershipPassword()">Leadership Lessons</button>
             </div>
         </nav>
-        <div class="hero">
-            <h1>VRE Staff Training Hub</h1>
-            <p>Your gateway to mastering moderation for Virtual Reality Entertainment's Discord, VRChat, FiveM, and Minecraft communities.</p>
+        <div class="cyberpunk-hero">
+            <h1 class="highlighted-title">VRE Staff Training Hub</h1>
+            <p class="cyberpunk-subtitle">Your gateway to mastering moderation for Virtual Reality Entertainment's Discord, VRChat, FiveM, and Minecraft communities.</p>
             <a href="lessons/index.html" class="cta-button">Start Learning</a>
             <button class="cta-button" onclick="checkLeadershipPassword()">Leadership Lessons</button>
         </div>
     </header>
     <main>
         <section id="welcome" class="welcome-section">
-            <h2>Welcome to the VRE Staff Portal</h2>
+            <h2 class="highlighted-title">Welcome to the VRE Staff Portal</h2>
             <p>We are excited to introduce the brand-new VRE Staff Training Hub! This portal will serve as the central location for all training resources, guides, and updates for Virtual Reality Entertainment staff members.</p>
             <p>Whether you're a new team member or a seasoned moderator, this hub will provide you with the tools and knowledge you need to excel in your role. Stay tuned as we continue to add new resources and improve the platform to better serve your needs.</p>
         </section>
     </main>
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2023-2026 Virtual Reality Entertainment & VRE Labs. All rights reserved.</p>
-            <p>Made for VRE with love by VRE Labs.</p>
-            <ul class="social-links">
-                <li><a href="https://x.com/VRE_Group" target="_blank">Twitter</a></li>
-                <li><a href="https://bsky.app/profile/vrentertainment.bsky.social" target="_blank">Bluesky</a></li>
-            </ul>
-        </div>
+    <footer class="star-wars-footer">
+        <p class="holographic-effect">&copy; 2023-2026 Virtual Reality Entertainment & VRE Labs. All rights reserved.</p>
+        <p class="holographic-effect">Made for VRE with love by VRE Labs.</p>
+        <ul class="social-links">
+            <li><a href="https://x.com/VRE_Group" target="_blank" aria-label="Twitter"></a></li>
+            <li><a href="https://bsky.app/profile/vrentertainment.bsky.social" target="_blank" aria-label="Bluesky"></a></li>
+        </ul>
     </footer>
     <script src="scripts.js"></script>
 </body>
