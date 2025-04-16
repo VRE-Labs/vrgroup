@@ -100,5 +100,13 @@
     </footer>
 
     <script src="../scripts.js"></script>
+    <script>
+        // Ensure no unintended elements are appended to the body
+        document.querySelectorAll("button").forEach(button => {
+            if (!button.closest("footer") && !button.closest("section")) {
+                button.remove();
+            }
+        });
+    </script>
 </body>
 </html>
