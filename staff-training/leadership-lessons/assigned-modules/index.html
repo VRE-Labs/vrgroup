@@ -43,5 +43,11 @@
     </footer>
 
     <script src="../scripts.js"></script>
+    <script>
+        // Ensure no quiz-container logic is applied here
+        document.querySelectorAll('.quiz-container').forEach(container => {
+            container.style.display = 'none';
+        });
+    </script>
 </body>
 </html>

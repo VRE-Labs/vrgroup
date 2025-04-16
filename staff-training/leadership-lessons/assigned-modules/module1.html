@@ -6,7 +6,7 @@
     <title>Leadership Refresher Module</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
-<body>
+<body id="module1-page">
     <div class="lesson-header">
         <h1 class="highlighted-title">🌟 Leadership Refresher Module</h1>
         <p class="lesson-subtitle">“Leadership isn’t a role—it’s a rhythm. Let’s fine-tune yours.”</p>
@@ -15,53 +15,57 @@
     <div class="lesson-body">
         <!-- Section Container -->
         <div id="module-sections">
-            <!-- Section 1 -->
-            <section id="section-1" class="module-section">
-                <h2 class="section-title">🧠 Section 1: Accountability</h2>
-                <p>Leadership requires accountability. Own your mistakes, learn from them, and lead with transparency.</p>
-                <p><strong>Question:</strong> What should you do if something goes wrong?</p>
-                <button class="answer-button" data-correct="false">Ignore it</button>
-                <button class="answer-button" data-correct="true">Acknowledge it</button>
-                <button class="answer-button" data-correct="false">Blame others</button>
-            </section>
-
-            <!-- Section 2 -->
-            <section id="section-2" class="module-section" style="display: none;">
-                <h2 class="section-title">⚙️ Section 2: Proactivity</h2>
-                <p>Proactivity is key to leadership. Anticipate problems and always have a backup plan.</p>
-                <p><strong>Question:</strong> What is the best way to handle potential issues?</p>
-                <button class="answer-button" data-correct="true">Anticipate them</button>
-                <button class="answer-button" data-correct="false">Ignore them</button>
-                <button class="answer-button" data-correct="false">React after they occur</button>
-            </section>
-
-            <!-- Section 3 -->
-            <section id="section-3" class="module-section" style="display: none;">
-                <h2 class="section-title">🗣️ Section 3: Team Communication</h2>
-                <p>Effective communication ensures your team is aligned and informed.</p>
-                <p><strong>Question:</strong> What is the best way to ensure team alignment?</p>
-                <button class="answer-button" data-correct="true">Delegate and confirm responsibilities</button>
-                <button class="answer-button" data-correct="false">Assume everyone knows their role</button>
-                <button class="answer-button" data-correct="false">Work alone</button>
-            </section>
-
-            <!-- Final Quiz -->
-            <section id="final-quiz" class="module-section" style="display: none;">
-                <h2 class="section-title">🧩 Final Quiz</h2>
-                <p>Test your knowledge of the Leadership Refresher Module.</p>
-                <div class="question">
-                    <p>1. What is the key to building community trust?</p>
-                    <button class="answer-button" data-correct="true">Consistency</button>
-                    <button class="answer-button" data-correct="false">Silence</button>
-                    <button class="answer-button" data-correct="false">Perfection</button>
-                </div>
-                <div class="question">
-                    <p>2. What should you do if something goes wrong?</p>
-                    <button class="answer-button" data-correct="true">Acknowledge it</button>
+            <!-- Quiz Wrapper -->
+            <div class="quiz-container">
+                <!-- Section 1 -->
+                <section id="section-1" class="module-section">
+                    <h2 class="section-title">🧠 Section 1: Accountability</h2>
+                    <p>Leadership requires accountability. Own your mistakes, learn from them, and lead with transparency.</p>
+                    <p><strong>Question:</strong> What should you do if something goes wrong?</p>
                     <button class="answer-button" data-correct="false">Ignore it</button>
+                    <button class="answer-button" data-correct="true">Acknowledge it</button>
                     <button class="answer-button" data-correct="false">Blame others</button>
-                </div>
-            </section>
+                </section>
+
+                <!-- Section 2 -->
+                <section id="section-2" class="module-section" style="display: none;">
+                    <h2 class="section-title">⚙️ Section 2: Proactivity</h2>
+                    <p>Proactivity is key to leadership. Anticipate problems and always have a backup plan.</p>
+                    <p><strong>Question:</strong> What is the best way to handle potential issues?</p>
+                    <button class="answer-button" data-correct="true">Anticipate them</button>
+                    <button class="answer-button" data-correct="false">Ignore them</button>
+                    <button class="answer-button" data-correct="false">React after they occur</button>
+                </section>
+
+                <!-- Section 3 -->
+                <section id="section-3" class="module-section" style="display: none;">
+                    <h2 class="section-title">🗣️ Section 3: Team Communication</h2>
+                    <p>Effective communication ensures your team is aligned and informed.</p>
+                    <p><strong>Question:</strong> What is the best way to ensure team alignment?</p>
+                    <button class="answer-button" data-correct="true">Delegate and confirm responsibilities</button>
+                    <button class="answer-button" data-correct="false">Assume everyone knows their role</button>
+                    <button class="answer-button" data-correct="false">Work alone</button>
+                </section>
+
+                <!-- Final Quiz -->
+                <section id="final-quiz" class="module-section" style="display: none;">
+                    <h2 class="section-title">🧩 Final Quiz</h2>
+                    <p>Test your knowledge of the Leadership Refresher Module.</p>
+                    <div class="question">
+                        <p>1. What is the key to building community trust?</p>
+                        <button class="answer-button" data-correct="true">Consistency</button>
+                        <button class="answer-button" data-correct="false">Silence</button>
+                        <button class="answer-button" data-correct="false">Perfection</button>
+                    </div>
+                    <div class="question">
+                        <p>2. What should you do if something goes wrong?</p>
+                        <button class="answer-button" data-correct="true">Acknowledge it</button>
+                        <button class="answer-button" data-correct="false">Ignore it</button>
+                        <button class="answer-button" data-correct="false">Blame others</button>
+                    </div>
+                </section>
+            </div>
+            <!-- End of Quiz Wrapper -->
 
             <!-- Completion Message -->
             <div id="completion-message" style="display: none;">
@@ -79,7 +83,48 @@
         <p id="progress-text">Progress: 0%</p>
     </div>
 
-    <script src="../scripts.js"></script>
-    <script src="module1.js"></script>
+    <script>
+        // Ensure quiz logic is scoped to this module only
+        document.addEventListener("DOMContentLoaded", () => {
+            if (document.body.id !== "module1-page") return;
+
+            const sections = document.querySelectorAll(".module-section");
+            const progressBar = document.querySelector(".progress-bar");
+            const progressText = document.querySelector("#progress-text");
+            const completionMessage = document.querySelector("#completion-message");
+            let progress = 0;
+            let currentSectionIndex = 0;
+
+            function updateProgress(increment) {
+                progress = Math.min(progress + increment, 100);
+                progressBar.style.width = `${progress}%`;
+                progressText.textContent = `Progress: ${progress}%`;
+            }
+
+            function showNextSection() {
+                if (currentSectionIndex < sections.length - 1) {
+                    sections[currentSectionIndex].style.display = "none";
+                    currentSectionIndex++;
+                    sections[currentSectionIndex].style.display = "block";
+                } else {
+                    sections[currentSectionIndex].style.display = "none";
+                    completionMessage.style.display = "block";
+                }
+            }
+
+            document.querySelectorAll(".answer-button").forEach(button => {
+                button.addEventListener("click", () => {
+                    if (button.dataset.correct === "true") {
+                        updateProgress(25); // Increment progress by 25% per correct section
+                        showNextSection();
+                    } else {
+                        alert("Incorrect answer. Try again.");
+                    }
+                });
+            });
+
+            sections[currentSectionIndex].style.display = "block";
+        });
+    </script>
 </body>
 </html>

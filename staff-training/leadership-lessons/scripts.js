@@ -23,57 +23,59 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Multiple-choice questions
-    const questions = [
-        {
-            question: "What is the key to building community trust?",
-            options: ["Consistency", "Silence", "Perfection"],
-            answer: "Consistency"
-        },
-        {
-            question: "What should you do if something goes wrong?",
-            options: ["Ignore it", "Acknowledge it", "Blame others"],
-            answer: "Acknowledge it"
-        }
-    ];
+    // Ensure quiz logic is only applied to lesson or module pages
+    if (document.body.classList.contains("lesson-page") || document.body.classList.contains("module-page")) {
+        const questions = [
+            {
+                question: "What is the key to building community trust?",
+                options: ["Consistency", "Silence", "Perfection"],
+                answer: "Consistency"
+            },
+            {
+                question: "What should you do if something goes wrong?",
+                options: ["Ignore it", "Acknowledge it", "Blame others"],
+                answer: "Acknowledge it"
+            }
+        ];
 
-    const quizContainer = document.createElement("div");
-    quizContainer.classList.add("quiz-container");
-    document.body.appendChild(quizContainer);
+        const quizContainer = document.createElement("div");
+        quizContainer.classList.add("quiz-container");
+        document.body.appendChild(quizContainer);
 
-    questions.forEach((q, idx) => {
-        const questionDiv = document.createElement("div");
-        questionDiv.classList.add("question");
-        questionDiv.innerHTML = `<p>${idx + 1}. ${q.question}</p>`;
-        q.options.forEach(option => {
-            const button = document.createElement("button");
-            button.textContent = option;
-            button.addEventListener("click", () => {
-                if (option === q.answer) {
-                    button.style.backgroundColor = "green";
-                    updateProgress(10); // Increment progress by 10% per correct answer
-                } else {
-                    button.style.backgroundColor = "red";
-                }
-                button.disabled = true;
+        questions.forEach((q, idx) => {
+            const questionDiv = document.createElement("div");
+            questionDiv.classList.add("question");
+            questionDiv.innerHTML = `<p>${idx + 1}. ${q.question}</p>`;
+            q.options.forEach(option => {
+                const button = document.createElement("button");
+                button.textContent = option;
+                button.addEventListener("click", () => {
+                    if (option === q.answer) {
+                        button.style.backgroundColor = "green";
+                        updateProgress(10); // Increment progress by 10% per correct answer
+                    } else {
+                        button.style.backgroundColor = "red";
+                    }
+                    button.disabled = true;
+                });
+                questionDiv.appendChild(button);
             });
-            questionDiv.appendChild(button);
+            quizContainer.appendChild(questionDiv);
         });
-        quizContainer.appendChild(questionDiv);
-    });
 
-    // Completion message
-    const completionMessage = document.createElement("div");
-    completionMessage.id = "completion-message";
-    completionMessage.style.display = "none";
-    completionMessage.innerHTML = `<h2>🎉 Module Complete!</h2><p>Great job! You've completed the Leadership Refresher Module.</p>`;
-    document.body.appendChild(completionMessage);
+        // Completion message
+        const completionMessage = document.createElement("div");
+        completionMessage.id = "completion-message";
+        completionMessage.style.display = "none";
+        completionMessage.innerHTML = `<h2>🎉 Module Complete!</h2><p>Great job! You've completed the Leadership Refresher Module.</p>`;
+        document.body.appendChild(completionMessage);
 
-    // Check for module completion
-    const checkCompletion = setInterval(() => {
-        if (progress === 100) {
-            completionMessage.style.display = "block";
-            clearInterval(checkCompletion);
-        }
-    }, 500);
+        // Check for module completion
+        const checkCompletion = setInterval(() => {
+            if (progress === 100) {
+                completionMessage.style.display = "block";
+                clearInterval(checkCompletion);
+            }
+        }, 500);
+    }
 });
