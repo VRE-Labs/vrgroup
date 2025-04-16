@@ -47,7 +47,7 @@
                 <button class="answer-button" data-correct="false">Perfection</button>
             </section>
 
-            <section id="section-2" class="lesson-section" style="display: none;">
+            <section id="section-2" class="lesson-section">
                 <h2 class="section-title">⚙️ Section 2: Core Leadership Traits</h2>
                 <p>Effective leaders share common traits that help them succeed in guiding their teams.</p>
                 <ul class="styled-list">
@@ -61,7 +61,7 @@
                 <button class="answer-button" data-correct="false">Micromanagement</button>
             </section>
 
-            <section id="section-3" class="lesson-section" style="display: none;">
+            <section id="section-3" class="lesson-section">
                 <h2 class="section-title">🗣️ Section 3: Leadership in Action</h2>
                 <p>Leadership is demonstrated through actions, not just words. Here are some practical ways to lead effectively:</p>
                 <ul class="styled-list">
@@ -75,7 +75,7 @@
                 <button class="answer-button" data-correct="false">By avoiding feedback</button>
             </section>
 
-            <div id="completion-message" style="display: none;">
+            <div id="completion-message">
                 <h2>🎉 Lesson Complete!</h2>
                 <p>Congratulations! You've completed Leadership Basics 101. Keep practicing these principles to grow as a leader.</p>
             </div>
@@ -100,13 +100,5 @@
     </footer>
 
     <script src="../scripts.js"></script>
-    <script>
-        // Ensure no unintended elements are appended to the body
-        document.querySelectorAll("button").forEach(button => {
-            if (!button.closest("footer") && !button.closest("section")) {
-                button.remove();
-            }
-        });
-    </script>
 </body>
 </html>
