@@ -705,32 +705,37 @@ body, .lesson-body, .platform-list, .footer-content {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Updated calendar-day styling with hover color-changing effect */
 .calendar-day {
-    background: linear-gradient(135deg, #8A2BE2, #00FFFF); /* Neon gradient */
-    color: #FFFFFF;
+    background: linear-gradient(135deg, #1a1a2e, #16213e); /* Subtle dark gradient */
+    color: #00FFFF; /* Neon Blue text */
     padding: 1.5rem;
-    border-radius: 10px;
+    border-radius: 15px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8), 0 0 30px #00FFFF; /* Neon glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    border: 2px solid transparent;
+    border-image: linear-gradient(45deg, #8A2BE2, #00FFFF) 1; /* Neon Purple to Neon Blue border */
 }
 
 .calendar-day h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 0.5rem;
-    color: #FFFFFF;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    color: #FFD700; /* Gold text for headers */
+    text-shadow: 0 0 10px #FFD700, 0 0 20px rgba(255, 215, 0, 0.5); /* Subtle glow */
 }
 
 .calendar-day p {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin: 0.5rem 0;
-    color: #FFFFFF;
+    color: #FFFFFF; /* White text for contrast */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Subtle glow */
 }
 
 .calendar-day:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #8A2BE2, #00FFFF); /* Neon Purple to Neon Blue gradient on hover */
+    box-shadow: 0 0 20px #00FFFF, 0 0 40px #8A2BE2; /* Enhanced glow on hover */
 }
 
 /* Cyberpunk Theme */
