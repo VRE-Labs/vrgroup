@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generation Crimson Application - Signal by VRE</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="cyberpunk-theme">
+    <div class="container star-wars-panel">
+        <h1 class="highlighted-title">Generation Crimson Application</h1>
+        <p class="cyberpunk-subtitle">
+            Signal by VRE is proud to announce its first-ever generation of creators: <strong>Generation Crimson</strong>! Applications open on <strong>April 20th</strong> and close on <strong>May 9th</strong>.
+        </p>
+        <p class="cyberpunk-subtitle">
+            We're looking for talented individuals to join us as:
+            <ul class="styled-list">
+                <li>2-3 VTubers</li>
+                <li>1-2 Content Hosts</li>
+                <li>1 Voice Actor</li>
+                <li>1 Wildcard (prove to us why you're unforgettable)</li>
+            </ul>
+        </p>
+        <form id="genCrimsonApplicationForm">
+            <label for="username" class="cyberpunk-subheading">Discord Username</label>
+            <input type="text" id="username" name="username" required class="cyberpunk-input">
+
+            <label for="role" class="cyberpunk-subheading">Which role are you applying for?</label>
+            <select id="role" name="role" required class="cyberpunk-input">
+                <option value="vtuber">VTuber</option>
+                <option value="content-host">Content Host</option>
+                <option value="voice-actor">Voice Actor</option>
+                <option value="wildcard">Wildcard</option>
+            </select>
+
+            <label for="experience" class="cyberpunk-subheading">Tell us about your experience and skills</label>
+            <textarea id="experience" name="experience" rows="5" required class="cyberpunk-input"></textarea>
+
+            <label for="why" class="cyberpunk-subheading">Why do you want to join Generation Crimson?</label>
+            <textarea id="why" name="why" rows="5" required class="cyberpunk-input"></textarea>
+
+            <label for="portfolio" class="cyberpunk-subheading">Portfolio or Relevant Links (optional)</label>
+            <input type="url" id="portfolio" name="portfolio" placeholder="https://yourportfolio.com" class="cyberpunk-input">
+
+            <button type="submit" class="cta-button">Submit Application</button>
+        </form>
+    </div>
+
+    <script>
+        // Handle the form submission
+        document.getElementById('genCrimsonApplicationForm').addEventListener('submit', function (event) {
+            event.preventDefault();  // Prevent the default form submission
+
+            // Collect form data
+            const formData = {
+                username: document.getElementById('username').value,
+                role: document.getElementById('role').value,
+                experience: document.getElementById('experience').value,
+                why: document.getElementById('why').value,
+                portfolio: document.getElementById('portfolio').value || "N/A"
+            };
+
+            // Structure the data for the Discord embed
+            const embedData = {
+                embeds: [
+                    {
+                        title: "New Generation Crimson Application",
+                        description: "A new application has been submitted for Signal's Generation Crimson.",
+                        color: 5814783,
+                        fields: [
+                            { name: "Discord Username", value: formData.username, inline: false },
+                            { name: "Role Applied For", value: formData.role, inline: false },
+                            { name: "Experience and Skills", value: formData.experience, inline: false },
+                            { name: "Why Join Generation Crimson?", value: formData.why, inline: false },
+                            { name: "Portfolio/Links", value: formData.portfolio, inline: false }
+                        ]
+                    }
+                ]
+            };
+
+            // Send the data to the Discord webhook
+            fetch('https://discord.com/api/webhooks/1355339311565766864/UEibg10FAf6Urtr1Hf4bjOOUDRPsmGbXNbtjUZ_smbdaDDBpbFD6AioCwf2YiMC9Lz3a', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(embedData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Your application has been submitted!');
+                // Optionally, reset the form
+                document.getElementById('genCrimsonApplicationForm').reset();
+            })
+            .catch(error => {
+                console.error('Error submitting the application:', error);
+                alert('There was an error submitting your application. Please try again later.');
+            });
+        });
+    </script>
+</body>
+</html>
