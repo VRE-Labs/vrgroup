@@ -1010,3 +1010,27 @@ body.cyberpunk-theme::after {
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 }
+
+/* Generation Crimson Section */
+.generation-crimson {
+    background: linear-gradient(135deg, #8B0000, #FF4500); /* Fiery red gradient */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #FF4500, 0 0 40px #8B0000;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.generation-crimson p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.generation-crimson .highlight {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFD700; /* Gold highlight */
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FF4500;
+}
