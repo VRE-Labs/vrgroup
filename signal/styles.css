@@ -45,6 +45,15 @@ body {
     padding: 0;
     line-height: 1.6;
     text-align: center;
+    overflow-x: hidden;
+}
+
+/* Ensure all elements fit within the screen */
+body, .cyberpunk-hero, .cyberpunk-body, .talent-grid, .footer-content {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0 auto;
+    padding: 0 1rem; /* Add padding to prevent elements from touching the screen edges */
 }
 
 /* Responsive Typography */
@@ -1060,6 +1069,11 @@ body.cyberpunk-theme::after {
     .talent-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
+
+    .nav-buttons {
+        flex-wrap: wrap; /* Ensure buttons wrap on smaller screens */
+        gap: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1082,5 +1096,10 @@ body.cyberpunk-theme::after {
 
     .talent-grid {
         grid-template-columns: 1fr;
+    }
+
+    .nav-buttons {
+        flex-direction: column; /* Stack buttons vertically on very small screens */
+        align-items: center;
     }
 }
