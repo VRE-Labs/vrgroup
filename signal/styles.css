@@ -116,8 +116,9 @@ p, li {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
-    margin: 1.5rem 0; /* Add spacing around the buttons */
+    gap: 2rem; /* Increase gap between buttons */
+    margin: 2rem 0; /* Add spacing above and below the navigation buttons */
+    flex-wrap: wrap; /* Ensure buttons wrap on smaller screens */
 }
 
 .nav-buttons .button {
@@ -679,8 +680,9 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
-    margin: 1.5rem 0; /* Add spacing around the buttons */
+    gap: 2rem; /* Increase gap between buttons */
+    margin: 2rem 0; /* Add spacing above and below the navigation buttons */
+    flex-wrap: wrap; /* Ensure buttons wrap on smaller screens */
 }
 
 .button {
@@ -858,8 +860,10 @@ body.cyberpunk-theme {
 
 /* Star Wars-inspired header */
 .star-wars-header {
-    border-bottom: 5px solid #FFD700;
     text-align: center;
+    padding: 2rem 1rem; /* Add padding to create space around the header */
+    margin-bottom: 2rem; /* Add margin to separate the header from the navigation */
+    border-bottom: 5px solid #FFD700;
     position: relative;
     animation: border-ripple 4s infinite; /* Add ripple animation */
 }
@@ -1072,7 +1076,13 @@ body.cyberpunk-theme::after {
 
     .nav-buttons {
         flex-wrap: wrap; /* Ensure buttons wrap on smaller screens */
-        gap: 1rem;
+        gap: 1.5rem; /* Adjust gap between buttons for smaller screens */
+        margin: 1.5rem 0; /* Adjust spacing above and below the navigation buttons */
+    }
+
+    .star-wars-header {
+        padding: 1.5rem 1rem; /* Reduce padding for smaller screens */
+        margin-bottom: 1.5rem; /* Adjust margin for smaller screens */
     }
 }
 
@@ -1101,5 +1111,12 @@ body.cyberpunk-theme::after {
     .nav-buttons {
         flex-direction: column; /* Stack buttons vertically on very small screens */
         align-items: center;
+        gap: 1rem; /* Reduce gap between buttons */
+        margin: 1rem 0; /* Adjust spacing above and below the navigation buttons */
+    }
+
+    .star-wars-header {
+        padding: 1rem 0.5rem; /* Further reduce padding for very small screens */
+        margin-bottom: 1rem; /* Adjust margin for very small screens */
     }
 }
