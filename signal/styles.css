@@ -84,7 +84,7 @@ p, li {
     align-items: center; /* Center the nav-buttons vertically */
     padding: 1rem;
     background: rgba(0, 0, 0, 0.8); /* Semi-transparent black for navbar */
-    margin-top: 2rem; /* Add margin to drop the navbar lower */
+    margin-top: 3rem; /* Increase margin to drop the navbar lower */
 }
 
 .navbar .logo {
@@ -118,7 +118,7 @@ p, li {
     justify-content: center;
     align-items: center;
     gap: 2rem; /* Increase gap between buttons */
-    margin: 2rem 0; /* Add spacing above and below the navigation buttons */
+    margin: 2.5rem 0; /* Add more spacing above and below the navigation buttons */
     flex-wrap: wrap; /* Ensure buttons wrap on smaller screens */
 }
 
@@ -682,7 +682,7 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 2rem; /* Increase gap between buttons */
-    margin: 2rem 0; /* Add spacing above and below the navigation buttons */
+    margin: 2.5rem 0; /* Add more spacing above and below the navigation buttons */
     flex-wrap: wrap; /* Ensure buttons wrap on smaller screens */
 }
 
@@ -1078,7 +1078,7 @@ body.cyberpunk-theme::after {
     .nav-buttons {
         flex-wrap: wrap; /* Ensure buttons wrap on smaller screens */
         gap: 1.5rem; /* Adjust gap between buttons for smaller screens */
-        margin: 1.5rem 0; /* Adjust spacing above and below the navigation buttons */
+        margin: 2rem 0; /* Adjust spacing above and below the navigation buttons */
     }
 
     .star-wars-header {
@@ -1087,7 +1087,7 @@ body.cyberpunk-theme::after {
     }
 
     .navbar {
-        margin-top: 1.5rem; /* Adjust margin for smaller screens */
+        margin-top: 2rem; /* Adjust margin for smaller screens */
     }
 }
 
@@ -1117,7 +1117,7 @@ body.cyberpunk-theme::after {
         flex-direction: column; /* Stack buttons vertically on very small screens */
         align-items: center;
         gap: 1rem; /* Reduce gap between buttons */
-        margin: 1rem 0; /* Adjust spacing above and below the navigation buttons */
+        margin: 1.5rem 0; /* Adjust spacing above and below the navigation buttons */
     }
 
     .star-wars-header {
@@ -1126,6 +1126,6 @@ body.cyberpunk-theme::after {
     }
 
     .navbar {
-        margin-top: 1rem; /* Further reduce margin for very small screens */
+        margin-top: 1.5rem; /* Further reduce margin for very small screens */
     }
 }
