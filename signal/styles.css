@@ -84,6 +84,7 @@ p, li {
     align-items: center; /* Center the nav-buttons vertically */
     padding: 1rem;
     background: rgba(0, 0, 0, 0.8); /* Semi-transparent black for navbar */
+    margin-top: 2rem; /* Add margin to drop the navbar lower */
 }
 
 .navbar .logo {
@@ -1084,6 +1085,10 @@ body.cyberpunk-theme::after {
         padding: 1.5rem 1rem; /* Reduce padding for smaller screens */
         margin-bottom: 1.5rem; /* Adjust margin for smaller screens */
     }
+
+    .navbar {
+        margin-top: 1.5rem; /* Adjust margin for smaller screens */
+    }
 }
 
 @media (max-width: 480px) {
@@ -1118,5 +1123,9 @@ body.cyberpunk-theme::after {
     .star-wars-header {
         padding: 1rem 0.5rem; /* Further reduce padding for very small screens */
         margin-bottom: 1rem; /* Adjust margin for very small screens */
+    }
+
+    .navbar {
+        margin-top: 1rem; /* Further reduce margin for very small screens */
     }
 }
