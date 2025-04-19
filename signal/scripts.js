@@ -11,12 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     window.addEventListener("scroll", () => {
-        if (window.scrollY < lastScrollY || window.scrollY === 0) {
-            // Show the header when scrolling up or at the top of the page
-            header.classList.add("visible");
+        if (window.scrollY > lastScrollY) {
+            header.classList.remove("visible"); // Hide header and navbar on scroll down
         } else {
-            // Hide the header when scrolling down
-            header.classList.remove("visible");
+            header.classList.add("visible"); // Show header and navbar on scroll up
         }
         lastScrollY = window.scrollY;
         resetInactivityTimer(); // Reset inactivity timer on scroll

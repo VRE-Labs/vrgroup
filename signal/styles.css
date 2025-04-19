@@ -431,7 +431,7 @@ p, li {
     transition: color 0.3s;
 }
 
-.social-links a:hover {
+social-links a:hover {
     color: #00bcd4;
 }
 
@@ -864,16 +864,16 @@ body.cyberpunk-theme {
 /* Star Wars-inspired header */
 .star-wars-header {
     display: flex;
-    justify-content: space-between; /* Space out the h1 and navbar */
-    align-items: center;
-    padding: 0.75rem 1.5rem; /* Reduce padding to make the header smaller */
-    position: fixed; /* Fix the header to the top of the screen */
+    justify-content: space-between; /* Space out left and right sections */
+    align-items: center; /* Vertically align items */
+    padding: 0.5rem 1rem; /* Adjust padding for compact layout */
+    background: rgba(0, 0, 0, 0.9); /* Ensure visibility */
+    border-bottom: 3px solid #FFD700; /* Add a bottom border for separation */
+    position: fixed; /* Fix header to the top */
     top: 0;
     left: 0;
-    width: 100%; /* Ensure the header spans the full width */
-    background: rgba(0, 0, 0, 0.9); /* Background for better visibility */
+    width: 100%; /* Full width */
     z-index: 1000; /* Ensure it stays on top of other elements */
-    border-bottom: 3px solid #FFD700; /* Add a bottom border for separation */
     transition: transform 0.3s ease-in-out; /* Smooth transition for hiding and showing */
     transform: translateY(-100%); /* Initially hide the header */
 }
@@ -882,16 +882,240 @@ body.cyberpunk-theme {
     transform: translateY(0); /* Show the header when visible */
 }
 
+/* Left section: h1 and h2 */
+.star-wars-header .header-left {
+    display: flex;
+    flex-direction: column; /* Stack h1 and h2 vertically */
+    align-items: flex-start; /* Align to the far left */
+    gap: 0.2rem; /* Add spacing between h1 and h2 */
+}
+
 .star-wars-header h1 {
-    font-size: 1.3rem; /* Slightly reduce font size */
-    margin: 0;
+    font-size: 1.5rem; /* Resize h1 for better balance */
+    margin: 0; /* Remove extra margins */
     color: #FFD700; /* Gold color for visibility */
     text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
-    background: linear-gradient(90deg, #00FFFF, #8A2BE2, #FFD700); /* Gradient for wigwag animation */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient-wigwag 10s infinite ease-in-out; /* Apply wigwag animation */
-    background-size: 200%; /* Extend background for smooth animation */
+}
+
+.star-wars-header .tagline {
+    font-size: 1rem; /* Resize h2 to fit neatly below h1 */
+    color: #FFD700; /* Gold color for visibility */
+    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700;
+    font-weight: 400; /* Lighter font weight for tagline */
+    margin: 0; /* Remove extra margins */
+}
+
+/* Right section: navbar */
+.star-wars-header nav {
+    display: flex;
+    gap: 1rem; /* Add spacing between buttons */
+}
+
+.star-wars-header nav a {
+    color: #FFFFFF; /* White text for buttons */
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #8A2BE2, #00FFFF); /* Gradient background */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.star-wars-header nav a:hover {
+    background: #FFD700; /* Gold on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Responsive adjustments for header */
+@media (max-width: 768px) {
+    .star-wars-header {
+        flex-direction: column; /* Stack left and right sections vertically */
+        align-items: center; /* Center-align items */
+    }
+
+    .star-wars-header .header-left {
+        align-items: center; /* Center-align h1 and h2 */
+    }
+
+    .star-wars-header nav {
+        justify-content: center; /* Center-align navbar buttons */
+        margin-top: 0.5rem; /* Add spacing above navbar */
+    }
+}
+
+@media (max-width: 480px) {
+    .star-wars-header h1 {
+        font-size: 1.3rem; /* Adjust h1 size for smaller screens */
+    }
+
+    .star-wars-header .tagline {
+        font-size: 0.9rem; /* Adjust h2 size for smaller screens */
+    }
+
+    .star-wars-header nav a {
+        font-size: 0.8rem; /* Adjust button font size */
+        padding: 0.4rem 0.8rem; /* Adjust button padding */
+    }
+}
+
+/* Section Styling */
+.cyberpunk-body {
+    padding: 2rem;
+    margin: 1rem auto;
+    max-width: 90%;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Header adjustments */
+.star-wars-header {
+    display: flex;
+    flex-direction: column; /* Stack h1 and navbar vertically */
+    align-items: center; /* Center-align the content */
+    justify-content: center; /* Center-align vertically */
+    padding: 0.5rem 1rem; /* Adjust padding for a compact layout */
+    gap: 0.3rem; /* Add spacing between h1 and h2 */
+}
+
+/* Header title (h1) */
+.star-wars-header h1 {
+    font-size: 1.5rem; /* Resize h1 for better balance */
+    margin: 0; /* Remove extra margins */
+    text-align: center; /* Center-align the text */
+}
+
+/* Tagline under header (h2) */
+.star-wars-header .tagline {
+    font-size: 1rem; /* Resize h2 to fit neatly below h1 */
+    color: #FFD700; /* Gold color for visibility */
+    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700;
+    font-weight: 400; /* Lighter font weight for tagline */
+    text-align: center; /* Center-align the tagline */
+    margin: 0; /* Remove extra margins */
+}
+
+/* Responsive adjustments for header */
+@media (max-width: 768px) {
+    .star-wars-header h1 {
+        font-size: 1.3rem; /* Adjust h1 size for smaller screens */
+    }
+    .star-wars-header .tagline {
+        font-size: 0.9rem; /* Adjust h2 size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .star-wars-header h1 {
+        font-size: 1.1rem; /* Further reduce h1 size for very small screens */
+    }
+    .star-wars-header .tagline {
+        font-size: 0.8rem; /* Further reduce h2 size for very small screens */
+    }
+}
+
+/* Header adjustments */
+.star-wars-header {
+    padding: 0.5rem 1rem; /* Keep the header thin */
+    gap: 0.2rem; /* Reduce spacing between h1 and h2 */
+    flex-wrap: nowrap; /* Prevent wrapping of navbar buttons */
+}
+
+/* Header title (h1) */
+.star-wars-header h1 {
+    font-size: 1.2rem; /* Keep h1 small */
+    margin: 0; /* Remove extra margins */
+}
+
+/* Tagline under header (h2) */
+.star-wars-header .tagline {
+    font-size: 0.9rem; /* Reduce font size to fit on one line */
+    color: #FFD700; /* Gold color for visibility */
+    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700;
+    font-weight: 400; /* Lighter font weight for tagline */
+    text-align: center; /* Center-align the tagline */
+    margin: 0; /* Remove extra margins */
+    white-space: nowrap; /* Ensure the tagline stays on one line */
+    overflow: hidden; /* Prevent overflow issues */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+/* Navbar adjustments */
+.star-wars-header nav {
+    display: flex;
+    justify-content: center; /* Center-align navbar buttons */
+    flex-wrap: nowrap; /* Prevent wrapping of buttons */
+    gap: 0.5rem; /* Add spacing between buttons */
+}
+
+/* Responsive adjustments for header */
+@media (max-width: 768px) {
+    .star-wars-header h1 {
+        font-size: 1rem; /* Further reduce font size for smaller screens */
+    }
+    .star-wars-header .tagline {
+        font-size: 0.8rem; /* Adjust tagline font size for smaller screens */
+    }
+    .star-wars-header nav {
+        gap: 0.3rem; /* Reduce spacing between buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    .star-wars-header h1 {
+        font-size: 0.9rem; /* Further reduce font size for very small screens */
+    }
+    .star-wars-header .tagline {
+        font-size: 0.7rem; /* Adjust tagline font size for very small screens */
+    }
+    .star-wars-header nav {
+        gap: 0.2rem; /* Further reduce spacing between buttons */
+    }
+}
+
+/* Header adjustments */
+.star-wars-header {
+    padding: 0.5rem 1rem; /* Reduce padding to make the header thinner */
+    gap: 0.3rem; /* Reduce spacing between h1 and h2 */
+}
+
+/* Header title (h1) */
+.star-wars-header h1 {
+    font-size: 1.2rem; /* Reduce font size for a smaller header */
+}
+
+/* Tagline under header (h2) */
+.star-wars-header .tagline {
+    font-size: 1rem; /* Adjust tagline font size to match smaller header */
+}
+
+/* Responsive adjustments for header */
+@media (max-width: 768px) {
+    .star-wars-header h1 {
+        font-size: 1rem; /* Further reduce font size for smaller screens */
+    }
+    .star-wars-header .tagline {
+        font-size: 0.9rem; /* Adjust tagline font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .star-wars-header h1 {
+        font-size: 0.9rem; /* Further reduce font size for very small screens */
+    }
+    .star-wars-header .tagline {
+        font-size: 0.8rem; /* Adjust tagline font size for very small screens */
+    }
+}
+
+/* Tagline under header */
+.star-wars-header .tagline {
+    font-size: 1.2rem; /* Slightly smaller than the header */
+    color: #FFD700; /* Gold color for visibility */
+    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700;
+    margin-top: 0.5rem; /* Add spacing below the h1 */
+    font-weight: 400; /* Lighter font weight for tagline */
+    text-align: center; /* Center-align the tagline */
 }
 
 /* Adjust header and navigation for smaller screens */
