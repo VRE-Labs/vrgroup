@@ -784,7 +784,7 @@ body.cyberpunk-theme {
 }
 
 .cyberpunk-hero {
-    padding: 2rem;
+    padding: .2rem .3rem; /* Reduce padding to make the section smaller */
     margin: 1rem auto;
     max-width: 90%;
     background: linear-gradient(135deg, #8A2BE2, #00FFFF);
@@ -874,6 +874,12 @@ body.cyberpunk-theme {
     background: rgba(0, 0, 0, 0.9); /* Background for better visibility */
     z-index: 1000; /* Ensure it stays on top of other elements */
     border-bottom: 3px solid #FFD700; /* Add a bottom border for separation */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hiding and showing */
+    transform: translateY(-100%); /* Initially hide the header */
+}
+
+.star-wars-header.visible {
+    transform: translateY(0); /* Show the header when visible */
 }
 
 .star-wars-header h1 {
