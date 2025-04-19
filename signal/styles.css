@@ -785,7 +785,7 @@ body.cyberpunk-theme {
 
 .cyberpunk-hero {
     padding: .2rem .3rem; /* Reduce padding to make the section smaller */
-    margin: 1rem auto;
+    margin: 5rem auto; /* Add margin to push it below the header */
     max-width: 90%;
     background: linear-gradient(135deg, #8A2BE2, #00FFFF);
     border-radius: 10px;
