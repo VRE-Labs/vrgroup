@@ -1578,21 +1578,21 @@ body.cyberpunk-theme::after {
 /* Carousel */
 .carousel {
     display: flex;
-    justify-content: center; /* Center items within the body */
+    justify-content: center; /* Center items horizontally */
     align-items: flex-start;
-    gap: 1rem; /* Reduce gap for a sleeker look */
+    gap: 1rem; /* Maintain spacing between items */
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
     padding: 1rem 0;
-    max-width: 90%; /* Ensure carousel fits within the body edges */
-    margin: 0 auto; /* Center the carousel */
+    max-width: 100%; /* Ensure carousel spans the full width of the body */
+    margin: 0 auto; /* Center the carousel within the page */
 }
 
 .carousel-item {
-    flex: 0 0 15%; /* Smaller width for sleeker items */
-    max-width: 150px; /* Limit the width for consistent sizing */
+    flex: 0 0 18%; /* Adjust width for better alignment */
+    max-width: 180px; /* Limit the width for consistent sizing */
     text-align: center;
     background: rgba(0, 0, 0, 0.8);
-    padding: 0.8rem; /* Reduce padding for a compact design */
+    padding: 0.8rem; /* Compact padding for a sleeker look */
     border-radius: 8px; /* Slightly smaller border radius */
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1635,8 +1635,8 @@ body.cyberpunk-theme::after {
     }
 
     .carousel-item {
-        flex: 0 0 30%; /* Adjust size for smaller screens */
-        max-width: 120px;
+        flex: 0 0 45%; /* Adjust size for smaller screens */
+        max-width: 150px;
     }
 
     .carousel-item iframe {
@@ -1646,7 +1646,7 @@ body.cyberpunk-theme::after {
 
 @media (max-width: 480px) {
     .carousel-item {
-        flex: 0 0 45%; /* Stack items vertically on very small screens */
+        flex: 0 0 90%; /* Stack items vertically on very small screens */
         max-width: 100%;
     }
 
