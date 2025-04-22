@@ -6,6 +6,27 @@
     <title>VRE Group - Home</title>
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Default favicon -->
+    <link id="dynamic-favicon" rel="icon" type="image/png" href="/android-chrome-192x192.png">
+    <script>
+        // Logic to dynamically decide the favicon
+        function setFavicon() {
+            const favicon = document.getElementById('dynamic-favicon');
+            const isAppleDevice = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+            const isHighResolution = window.devicePixelRatio > 1.5;
+
+            if (isAppleDevice) {
+                favicon.href = '/apple-touch-icon.png';
+            } else if (isHighResolution) {
+                favicon.href = '/android-chrome-512x512.png';
+            } else {
+                favicon.href = '/android-chrome-192x192.png';
+            }
+        }
+
+        // Call the function on page load
+        window.addEventListener('load', setFavicon);
+    </script>
 </head>
 <body class="cyberpunk-theme">
     <header class="lesson-header star-wars-header">
