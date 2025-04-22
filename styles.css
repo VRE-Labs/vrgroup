@@ -950,7 +950,7 @@ body.cyberpunk-theme {
     }
 
     .star-wars-header .tagline {
-        font-size: 0.9rem; /* Adjust h2 size for smaller screens */
+        font-size: 0.9rem; /* Adjust h2 size to fit neatly below h1 */
     }
 
     .star-wars-header nav a {
@@ -1578,16 +1578,16 @@ body.cyberpunk-theme::after {
 /* Carousel */
 .carousel {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    overflow-x: auto;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
     padding: 1rem 0;
-    scroll-behavior: smooth;
 }
 
 .carousel-item {
     flex: 0 0 18%; /* Ensure items take up equal space */
+    max-width: 200px; /* Limit the width for consistent sizing */
     text-align: center;
     background: rgba(0, 0, 0, 0.8);
     padding: 1rem;
@@ -1608,14 +1608,64 @@ body.cyberpunk-theme::after {
     color: #FFFFFF;
 }
 
+.carousel-item h3 {
+    font-size: 1.2rem;
+    color: #7289da; /* Discord blue for widget header */
+    margin-bottom: 0.5rem;
+}
+
+.carousel-item iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    border: 2px solid #7289da; /* Discord blue border */
+}
+
 .carousel-item:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
-.carousel-item.discord-widget iframe {
-    width: 100%;
-    height: 250px;
-    border-radius: 10px;
-    border: 2px solid #7289da; /* Discord blue border */
+@media (max-width: 768px) {
+    .carousel {
+        justify-content: center; /* Center items on smaller screens */
+        gap: 1rem;
+    }
+
+    .carousel-item {
+        flex: 0 0 45%; /* Adjust size for smaller screens */
+        max-width: 150px;
+    }
+
+    .carousel-item iframe {
+        height: 150px; /* Adjust iframe height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        flex: 0 0 90%; /* Stack items vertically on very small screens */
+        max-width: 100%;
+    }
+
+    .carousel-item iframe {
+        height: 120px; /* Further adjust iframe height */
+    }
+}
+
+/* Platform-specific styling */
+.carousel-item img {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.carousel-item:hover img {
+    transform: scale(1.2);
+    filter: grayscale(0%);
 }
