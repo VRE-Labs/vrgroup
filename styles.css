@@ -1549,7 +1549,7 @@ body.cyberpunk-theme::after {
 }
 
 .discord-widget {
-    background: linear-gradient(135deg, #8A2BE2, #00FFFF); /* Match theme gradient */
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
     color: #FFFFFF; /* White text */
     padding: 1.5rem;
     border-radius: 10px;
@@ -1679,7 +1679,7 @@ body.cyberpunk-theme::after {
 .discord-widget {
     margin-top: 2rem;
     text-align: center;
-    background: linear-gradient(135deg, #8A2BE2, #00FFFF); /* Match theme gradient */
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
