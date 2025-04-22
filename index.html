@@ -144,20 +144,32 @@
                 if (!response.ok) throw new Error('Failed to fetch Discord widget data.');
                 const data = await response.json();
 
+                const membersByRole = {}; // Group members by their top-most role
+                data.members.forEach(member => {
+                    const role = member.status || 'No Role'; // Use status or fallback to 'No Role'
+                    if (!membersByRole[role]) membersByRole[role] = [];
+                    membersByRole[role].push(member);
+                });
+
                 container.innerHTML = `
                     <div class="discord-server-info">
                         <img src="${data.icon ? `https://cdn.discordapp.com/icons/${data.id}/${data.icon}.png` : './images/discord-placeholder.png'}" alt="${data.name}" class="discord-server-icon">
                         <h4>${data.name}</h4>
                         <p>${data.presence_count} members online</p>
                     </div>
-                    <ul class="discord-members-list">
-                        ${data.members.map(member => `
-                            <li>
-                                <img src="${member.avatar_url}" alt="${member.username}" class="discord-member-avatar">
-                                <span>${member.username}</span>
-                            </li>
-                        `).join('')}
-                    </ul>
+                    ${Object.entries(membersByRole).map(([role, members]) => `
+                        <div class="discord-role-group">
+                            <h5>${role}</h5>
+                            <ul class="discord-members-grid">
+                                ${members.map(member => `
+                                    <li>
+                                        <img src="${member.avatar_url}" alt="${member.username}" class="discord-member-avatar">
+                                        <span>${member.username}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    `).join('')}
                     <a href="${data.instant_invite}" target="_blank" class="cta-button">Join Us on Discord</a>
                 `;
             } catch (error) {

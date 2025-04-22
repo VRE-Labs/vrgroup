@@ -1765,3 +1765,49 @@ body.cyberpunk-theme::after {
     background: linear-gradient(135deg, #FF7EB3, #FFD700);
     transform: scale(1.05);
 }
+
+.discord-role-group {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.discord-role-group h5 {
+    font-size: 1.2rem;
+    color: #FFD700; /* Gold for role headers */
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 5px #FFD700;
+}
+
+.discord-members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.discord-members-grid li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.discord-member-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.discord-members-grid span {
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    word-wrap: break-word;
+}
