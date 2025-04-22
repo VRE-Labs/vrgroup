@@ -1549,25 +1549,29 @@ body.cyberpunk-theme::after {
 }
 
 .discord-widget {
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    background: linear-gradient(135deg, #8A2BE2, #00FFFF); /* Match theme gradient */
     color: #FFFFFF; /* White text */
     padding: 1.5rem;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .discord-widget h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #7289da; /* Discord blue */
+    color: #FFD700; /* Gold text for contrast */
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700; /* Glowing effect */
 }
 
 .discord-widget iframe {
+    width: 100%;
+    max-width: 400px; /* Limit the width for better alignment */
+    height: 200px;
     border-radius: 10px;
+    border: 2px solid #FFD700; /* Gold border to match theme */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    border: 2px solid #7289da; /* Discord blue border */
 }
 
 .discord-widget:hover {
@@ -1670,4 +1674,35 @@ body.cyberpunk-theme::after {
 .carousel-item:hover img {
     transform: scale(1.2);
     filter: grayscale(0%);
+}
+
+.discord-widget {
+    margin-top: 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #8A2BE2, #00FFFF); /* Match theme gradient */
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.discord-widget h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #FFD700; /* Gold text for contrast */
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700; /* Glowing effect */
+}
+
+.discord-widget iframe {
+    width: 100%;
+    max-width: 400px; /* Limit the width for better alignment */
+    height: 200px;
+    border-radius: 10px;
+    border: 2px solid #FFD700; /* Gold border to match theme */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.discord-widget:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
