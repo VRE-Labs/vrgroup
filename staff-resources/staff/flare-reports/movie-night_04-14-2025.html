@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLARE Report - Movie Night 04/14/2025</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="cyberpunk-theme">
+    <header class="star-wars-header">
+        <div class="header-left">
+            <h1>🔥 F.L.A.R.E. Post-Event Report</h1>
+            <p class="tagline">(Feedback. Learnings. Attendance. Reflection. Enhancements.)</p>
+        </div>
+    </header>
+    <main class="cyberpunk-body">
+        <h2 class="cyberpunk-title">📝 Submission Requirements</h2>
+        <ul class="styled-list">
+            <li><strong>Lead Event Host:</strong> Must complete the report.</li>
+            <li><strong>Moderator:</strong> At least one moderator involved in the event must contribute.</li>
+            <li><strong>Leadership Sign-Off:</strong> The presiding Lead or Officer must review and sign off.</li>
+        </ul>
+
+        <h2 class="cyberpunk-title">🗓️ Event Details</h2>
+        <p><strong>Event Name:</strong> Movie Night Pajama Party Edition</p>
+        <p><strong>Date & Time:</strong> April 14th 7 PM Mountain Time</p>
+        <p><strong>Event Type:</strong> Social, Movie Night, VRChat</p>
+        <p><strong>Lead Host:</strong> Ares</p>
+        <p><strong>Moderators Present:</strong> Lys, Skye</p>
+        <p><strong>Presiding Lead/Officer:</strong> Ares</p>
+
+        <h2 class="cyberpunk-title">🧠 F – Feedback</h2>
+        <p><strong>Overall Vibe:</strong> Casual</p>
+        <p><strong>Unexpected Occurrences:</strong> Brief Crashes due to Quest Headsets for Ares & Lys</p>
+        <p><strong>Attendee Feedback:</strong> Timing was off, as the event was delayed due to neglect from an officer. Time Management leadership course recommended.</p>
+
+        <h2 class="cyberpunk-title">💡 L – Learnings</h2>
+        <p><strong>What Went Well:</strong> Movie played with minimal interruptions</p>
+        <p><strong>Standout Moments:</strong> None</p>
+        <p><strong>Positive Feedback:</strong> Users report: "Enjoyed being able to hang out with friends and watch and enjoy the movie."</p>
+
+        <h2 class="cyberpunk-title">👥 A – Attendance</h2>
+        <p><strong>Approximate Number of Attendees:</strong> 5</p>
+        <p><strong>Peak Attendance Time:</strong> 10:00 PM</p>
+        <p><strong>Engagement Levels:</strong></p>
+        <ul class="styled-list">
+            <li><strong>Low:</strong> 8 PM (due to late start)</li>
+            <li><strong>High:</strong> 10 PM (PEAK period)</li>
+        </ul>
+
+        <h2 class="cyberpunk-title">🔍 R – Reflection</h2>
+        <p><strong>Areas for Improvement:</strong> Event was started an hour late due to neglect from an Officer*</p>
+        <p><strong>Challenges Faced:</strong> None</p>
+        <p><strong>Moderation Notes:</strong> None</p>
+
+        <h2 class="cyberpunk-title">🚀 E – Enhancements</h2>
+        <p><strong>Repeatability:</strong> Yes, I would host this event again.</p>
+        <p><strong>Suggested Changes:</strong> Timing. Propriety needs to be enforced for timing.</p>
+        <p><strong>Additional Support Needed:</strong> None</p>
+
+        <h2 class="cyberpunk-title">🖊️ Sign-Offs</h2>
+        <form id="signature-form">
+            <label for="lead-host-signature"><strong>Lead Host Signature:</strong></label>
+            <input type="text" id="lead-host-signature" name="lead-host-signature" placeholder="Enter Lead Host Name" required>
+            <br><br>
+            <label for="moderator-signature"><strong>Moderator Signature:</strong></label>
+            <input type="text" id="moderator-signature" name="moderator-signature" placeholder="Enter Moderator Name" required>
+            <br><br>
+            <label for="officer-signature"><strong>Presiding Lead/Officer Approval:</strong></label>
+            <input type="text" id="officer-signature" name="officer-signature" placeholder="Enter Officer Name" required>
+            <br><br>
+            <button type="submit" class="cta-button">Submit Signatures</button>
+        </form>
+    </main>
+    <footer class="star-wars-footer">
+        <p class="holographic-effect">© 2025 F.L.A.R.E. Reports</p>
+    </footer>
+    <script>
+        document.getElementById('signature-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const leadHost = document.getElementById('lead-host-signature').value;
+            const moderator = document.getElementById('moderator-signature').value;
+            const officer = document.getElementById('officer-signature').value;
+
+            if (leadHost && moderator && officer) {
+                alert(`Signatures Submitted:\nLead Host: ${leadHost}\nModerator: ${moderator}\nOfficer: ${officer}`);
+            } else {
+                alert('Please fill out all signature fields.');
+            }
+        });
+    </script>
+</body>
+</html>

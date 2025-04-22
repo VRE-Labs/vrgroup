@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F.L.A.R.E. Reports</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="cyberpunk-theme">
+    <header class="star-wars-header">
+        <div class="header-left">
+            <h1>🔥 F.L.A.R.E. Reports</h1>
+            <p class="tagline">Feedback. Learnings. Attendance. Reflection. Enhancements.</p>
+        </div>
+    </header>
+    <main class="cyberpunk-body">
+        <h2 class="cyberpunk-title">What is a F.L.A.R.E. Report?</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>What is a F.L.A.R.E. Report?</h3>
+                <p id="section-what">F.L.A.R.E. Reports are post-event evaluations designed to capture key insights and feedback from events hosted by Virtual Reality Entertainment (VRE). These reports help us reflect on what went well, identify areas for improvement, and ensure continuous growth in our event planning and execution.</p>
+                <button class="cta-button" onclick="readSection('section-what')">Read Section</button>
+            </div>
+            <div class="info-card">
+                <h3>Why We Use F.L.A.R.E. Reports</h3>
+                <ul id="section-why" class="styled-list">
+                    <li>✅ To document event outcomes and attendee feedback.</li>
+                    <li>✅ To identify strengths and areas for improvement.</li>
+                    <li>✅ To ensure accountability and transparency in event hosting.</li>
+                    <li>✅ To create actionable plans for future events.</li>
+                </ul>
+                <button class="cta-button" onclick="readSection('section-why')">Read Section</button>
+            </div>
+            <div class="info-card">
+                <h3>How F.L.A.R.E. Reports Work</h3>
+                <p id="section-how">Each report is completed by the Lead Host, with contributions from moderators and leadership. The report is structured into five key sections:</p>
+                <ul class="styled-list">
+                    <li><strong>Feedback:</strong> Captures the overall vibe, attendee feedback, and unexpected occurrences.</li>
+                    <li><strong>Learnings:</strong> Highlights what went well, standout moments, and positive feedback.</li>
+                    <li><strong>Attendance:</strong> Tracks attendee numbers, peak times, and engagement levels.</li>
+                    <li><strong>Reflection:</strong> Identifies areas for improvement and challenges faced.</li>
+                    <li><strong>Enhancements:</strong> Suggests changes and additional support needed for future events.</li>
+                </ul>
+                <button class="cta-button" onclick="readSection('section-how')">Read Section</button>
+            </div>
+        </div>
+
+        <h2 class="cyberpunk-title">F.L.A.R.E. Report Previews</h2>
+        <section class="lesson-grid">
+            <a href="movie-night_04-14-2025.html" class="lesson-card">
+                <h3>Movie Night Pajama Party - 04/14/2025</h3>
+                <p>Casual vibe with brief crashes due to Quest headsets. Attendee feedback highlighted timing issues. Engagement peaked at 10 PM.</p>
+            </a>
+            <!-- Add more lesson-cards for additional F.L.A.R.E. reports as they are created -->
+        </section>
+    </main>
+    <footer class="star-wars-footer">
+        <p class="holographic-effect">© 2023-2026 F.L.A.R.E. Reports by Virtual Reality Entertainment</p>
+    </footer>
+    <script>
+        function readSection(sectionId) {
+            const sectionElement = document.getElementById(sectionId);
+            let sectionText = '';
+
+            if (sectionElement.tagName === 'UL') {
+                // If the section is a list, concatenate all list items
+                const listItems = sectionElement.querySelectorAll('li');
+                listItems.forEach((item) => {
+                    sectionText += item.textContent + '. ';
+                });
+            } else {
+                // Otherwise, get the text content directly
+                sectionText = sectionElement.innerText || sectionElement.textContent;
+            }
+
+            const speech = new SpeechSynthesisUtterance(sectionText);
+            speech.lang = 'en-US';
+            speech.rate = 1; // Adjust the rate if needed
+            window.speechSynthesis.speak(speech);
+        }
+    </script>
+</body>
+</html>
