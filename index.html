@@ -71,7 +71,9 @@
             </div>
             <div class="discord-widget">
                 <h3>Join Our Discord Server</h3>
-                <iframe src="https://discord.com/widget?id=1341672619530911745&theme=dark" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                <div id="discord-widget-container">
+                    <p>Loading server information...</p>
+                </div>
             </div>
         </div>
     </main>
@@ -134,6 +136,37 @@
         if (today.getMonth() === 3 && today.getDate() === 8) { // April is month 3 (0-indexed)
             startConfetti();
         }
+
+        async function loadDiscordWidget() {
+            const container = document.getElementById('discord-widget-container');
+            try {
+                const response = await fetch('https://discord.com/api/guilds/1341672619530911745/widget.json');
+                if (!response.ok) throw new Error('Failed to fetch Discord widget data.');
+                const data = await response.json();
+
+                container.innerHTML = `
+                    <div class="discord-server-info">
+                        <img src="${data.icon ? `https://cdn.discordapp.com/icons/${data.id}/${data.icon}.png` : './images/discord-placeholder.png'}" alt="${data.name}" class="discord-server-icon">
+                        <h4>${data.name}</h4>
+                        <p>${data.presence_count} members online</p>
+                    </div>
+                    <ul class="discord-members-list">
+                        ${data.members.map(member => `
+                            <li>
+                                <img src="${member.avatar_url}" alt="${member.username}" class="discord-member-avatar">
+                                <span>${member.username}</span>
+                            </li>
+                        `).join('')}
+                    </ul>
+                    <a href="${data.instant_invite}" target="_blank" class="cta-button">Join Us on Discord</a>
+                `;
+            } catch (error) {
+                container.innerHTML = `<p>Error loading Discord widget. Please try again later.</p>`;
+                console.error(error);
+            }
+        }
+
+        loadDiscordWidget();
     </script>
 </body>
 </html>
