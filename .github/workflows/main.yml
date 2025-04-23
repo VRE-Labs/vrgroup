@@ -1,0 +1,27 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Replace secrets in secrets.json
+      run: |
+        sed -i "s/\${{ secrets.GEN_CRIMSON_WEBHOOK }}/${{ secrets.GEN_CRIMSON_WEBHOOK }}/g" apps/secrets.json
+        sed -i "s/\${{ secrets.APPEAL_WEBHOOK }}/${{ secrets.APPEAL_WEBHOOK }}/g" apps/secrets.json
+        sed -i "s/\${{ secrets.EVENT_HOST_WEBHOOK }}/${{ secrets.EVENT_HOST_WEBHOOK }}/g" apps/secrets.json
+        sed -i "s/\${{ secrets.MODERATOR_WEBHOOK }}/${{ secrets.MODERATOR_WEBHOOK }}/g" apps/secrets.json
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./apps
