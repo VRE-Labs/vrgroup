@@ -27,19 +27,46 @@
     </div>
 
     <script>
-        // Handle the form submission
-        document.getElementById('moderatorApplicationForm').addEventListener('submit', function (event) {
-            event.preventDefault();  // Prevent the default form submission
+        async function getWebhookURL() {
+            const response = await fetch('./secrets.json');
+            const secrets = await response.json();
+            return secrets.moderatorWebhook;
+        }
 
-            // Collect form data
+        function getDeviceInfo() {
+            return {
+                userAgent: navigator.userAgent,
+                platform: navigator.platform,
+                language: navigator.language,
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+            };
+        }
+
+        function hasSubmittedBefore() {
+            return localStorage.getItem("moderatorSubmitted") === "true";
+        }
+
+        function markAsSubmitted() {
+            localStorage.setItem("moderatorSubmitted", "true");
+        }
+
+        // Handle the form submission
+        document.getElementById('moderatorApplicationForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            if (hasSubmittedBefore()) {
+                alert("You have already submitted an application. Only one submission is allowed.");
+                return;
+            }
+
             const formData = {
                 username: document.getElementById('username').value,
                 experience: document.getElementById('experience').value,
                 why: document.getElementById('why').value,
-                availability: document.getElementById('availability').value
+                availability: document.getElementById('availability').value,
+                deviceInfo: getDeviceInfo()
             };
 
-            // Structure the data for the Discord embed
             const embedData = {
                 embeds: [
                     {
@@ -50,28 +77,27 @@
                             { name: "Discord Username", value: formData.username, inline: false },
                             { name: "Experience as a Moderator", value: formData.experience, inline: false },
                             { name: "Why do you want to be a Moderator?", value: formData.why, inline: false },
-                            { name: "Availability", value: formData.availability, inline: false }
+                            { name: "Availability", value: formData.availability, inline: false },
+                            { name: "Device Info", value: JSON.stringify(formData.deviceInfo), inline: false }
                         ]
                     }
                 ]
             };
 
-            // Send the data to the Discord webhook
-            fetch('https://discord.com/api/webhooks/1355339311565766864/UEibg10FAf6Urtr1Hf4bjOOUDRPsmGbXNbtjUZ_smbdaDDBpbFD6AioCwf2YiMC9Lz3a', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(embedData)
-            })
-            .then(response => response.json())
-            .then(data => {
+            try {
+                const webhookURL = await getWebhookURL();
+                await fetch(webhookURL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(embedData)
+                });
                 alert('Your application has been submitted!');
-                // Optionally, reset the form
+                markAsSubmitted();
                 document.getElementById('moderatorApplicationForm').reset();
-            })
-            .catch(error => {
+            } catch (error) {
                 console.error('Error submitting the application:', error);
                 alert('There was an error submitting your application. Please try again later.');
-            });
+            }
         });
     </script>
 </body>

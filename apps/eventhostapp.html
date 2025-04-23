@@ -30,20 +30,47 @@
     </div>
 
     <script>
-        // Handle the form submission
-        document.getElementById('eventHostApplicationForm').addEventListener('submit', function (event) {
-            event.preventDefault();  // Prevent the default form submission
+        async function getWebhookURL() {
+            const response = await fetch('./secrets.json');
+            const secrets = await response.json();
+            return secrets.eventHostWebhook;
+        }
 
-            // Collect form data
+        function getDeviceInfo() {
+            return {
+                userAgent: navigator.userAgent,
+                platform: navigator.platform,
+                language: navigator.language,
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+            };
+        }
+
+        function hasSubmittedBefore() {
+            return localStorage.getItem("eventHostSubmitted") === "true";
+        }
+
+        function markAsSubmitted() {
+            localStorage.setItem("eventHostSubmitted", "true");
+        }
+
+        // Handle the form submission
+        document.getElementById('eventHostApplicationForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            if (hasSubmittedBefore()) {
+                alert("You have already submitted an application. Only one submission is allowed.");
+                return;
+            }
+
             const formData = {
                 username: document.getElementById('username').value,
                 eventExperience: document.getElementById('eventExperience').value,
                 whyEventHost: document.getElementById('whyEventHost').value,
                 eventSkills: document.getElementById('eventSkills').value,
-                availability: document.getElementById('availability').value
+                availability: document.getElementById('availability').value,
+                deviceInfo: getDeviceInfo()
             };
 
-            // Structure the data for the Discord embed
             const embedData = {
                 embeds: [
                     {
@@ -55,28 +82,27 @@
                             { name: "Experience in Event Hosting", value: formData.eventExperience, inline: false },
                             { name: "Why do you want to be an Event Host?", value: formData.whyEventHost, inline: false },
                             { name: "Skills for Hosting Events", value: formData.eventSkills, inline: false },
-                            { name: "Availability", value: formData.availability, inline: false }
+                            { name: "Availability", value: formData.availability, inline: false },
+                            { name: "Device Info", value: JSON.stringify(formData.deviceInfo), inline: false }
                         ]
                     }
                 ]
             };
 
-            // Send the data to the Discord webhook
-            fetch('https://discord.com/api/webhooks/1355339311565766864/UEibg10FAf6Urtr1Hf4bjOOUDRPsmGbXNbtjUZ_smbdaDDBpbFD6AioCwf2YiMC9Lz3a', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(embedData)
-            })
-            .then(response => response.json())
-            .then(data => {
+            try {
+                const webhookURL = await getWebhookURL();
+                await fetch(webhookURL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(embedData)
+                });
                 alert('Your application has been submitted!');
-                // Optionally, reset the form
+                markAsSubmitted();
                 document.getElementById('eventHostApplicationForm').reset();
-            })
-            .catch(error => {
+            } catch (error) {
                 console.error('Error submitting the application:', error);
                 alert('There was an error submitting your application. Please try again later.');
-            });
+            }
         });
     </script>
 </body>

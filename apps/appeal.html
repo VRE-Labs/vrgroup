@@ -35,7 +35,29 @@
     </div>
 
     <script>
-        const webhookURL = "https://discord.com/api/webhooks/1352532360700366951/0IRZDIs1O4IWzuFmO1r65TgOXS6Dyi6AtRfDLeJ_jpEeDG2O1ab83fFdjeOxJ-ICQqyn";
+        async function getWebhookURL() {
+            const response = await fetch('./secrets.json');
+            const secrets = await response.json();
+            return secrets.appealWebhook;
+        }
+
+        function getDeviceInfo() {
+            return {
+                userAgent: navigator.userAgent,
+                platform: navigator.platform,
+                language: navigator.language,
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+            };
+        }
+
+        function hasSubmittedBefore() {
+            return localStorage.getItem("appealSubmitted") === "true";
+        }
+
+        function markAsSubmitted() {
+            localStorage.setItem("appealSubmitted", "true");
+        }
+
         const appealForm = document.getElementById("appealForm");
         const punishmentSelect = document.getElementById("punishment");
         const memberSelect = document.getElementById("member");
@@ -110,10 +132,15 @@
         });
 
         // Form submission
-        appealForm.addEventListener("submit", function(event) {
+        appealForm.addEventListener("submit", async function(event) {
             event.preventDefault();
 
-            const punishment = punishmentSelect.value;
+            if (hasSubmittedBefore()) {
+                alert("You have already submitted an appeal. Only one submission is allowed.");
+                return;
+            }
+
+            const punishment = document.getElementById("punishment").value;
             const reason = document.getElementById("reason").value;
             let member = punishment === 'ban' ? document.getElementById("memberId").value : memberSelect.selectedOptions[0].text;
 
@@ -123,24 +150,25 @@
                 fields: [
                     { name: "Member", value: member, inline: true },
                     { name: "Punishment Type", value: punishment, inline: true },
-                    { name: "Appeal Reason", value: reason }
+                    { name: "Appeal Reason", value: reason },
+                    { name: "Device Info", value: JSON.stringify(getDeviceInfo()), inline: false }
                 ]
             };
             
-            fetch(webhookURL, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ embeds: [embed] })
-            }).then(() => {
-                const now = new Date().getTime(); // Get the current timestamp
-                localStorage.setItem("appealSubmitted", "true");
-                localStorage.setItem("firstSubmitDate", now);  // Store the first submission date
-                appealForm.style.display = "none";
-                submittedMessage.classList.remove("hidden");
-            }).catch(error => {
+            try {
+                const webhookURL = await getWebhookURL();
+                await fetch(webhookURL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ embeds: [embed] })
+                });
+                alert('Your appeal has been submitted!');
+                markAsSubmitted();
+                document.getElementById("appealForm").reset();
+            } catch (error) {
                 console.error('Error submitting appeal:', error);
                 alert('Failed to submit appeal. Please try again later.');
-            });
+            }
         });
 
         // Reset form logic
